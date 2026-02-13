@@ -7,12 +7,12 @@ const GOA_LAT = 15.4;
 const GOA_LNG = 73.8;
 
 const DESTINATIONS = [
-  { name: "Portugal", lat: 39.4, lng: -8.2 },
-  { name: "Hungary", lat: 47.5, lng: 19.0 },
-  { name: "Brazil", lat: -14.2, lng: -51.9 },
-  { name: "Germany", lat: 52.5, lng: 13.4 },
-  { name: "Thailand", lat: 15.9, lng: 100.9 },
-  { name: "Australia", lat: -25.3, lng: 133.8 },
+  { name: "Portugal", festival: "Boom Festival", lat: 39.4, lng: -8.2 },
+  { name: "Hungary", festival: "Ozora Festival", lat: 47.5, lng: 19.0 },
+  { name: "Brazil", festival: "Universo Paralello", lat: -14.2, lng: -51.9 },
+  { name: "Germany", festival: "Antaris Project", lat: 52.5, lng: 13.4 },
+  { name: "Thailand", festival: "The Experience", lat: 15.9, lng: 100.9 },
+  { name: "Australia", festival: "Rainbow Serpent", lat: -25.3, lng: 133.8 },
 ];
 
 const arcsData = DESTINATIONS.map((dest) => ({
@@ -24,23 +24,23 @@ const arcsData = DESTINATIONS.map((dest) => ({
 }));
 
 const labelsData = [
-  { lat: GOA_LAT, lng: GOA_LNG, text: "Goa", size: 1.2, color: "rgba(30,120,160,0.95)" },
+  { lat: GOA_LAT, lng: GOA_LNG, text: "Goa (Origin)", size: 1.6, color: "rgba(255,255,255,0.95)" },
   ...DESTINATIONS.map((d) => ({
     lat: d.lat,
     lng: d.lng,
-    text: d.name,
-    size: 0.8,
-    color: "rgba(30,90,130,0.85)",
+    text: `${d.name}\n${d.festival}`,
+    size: 1.0,
+    color: "rgba(220,240,255,0.9)",
   })),
 ];
 
 const pointsData = [
-  { lat: GOA_LAT, lng: GOA_LNG, size: 0.6, color: "rgba(30,120,160,0.9)" },
+  { lat: GOA_LAT, lng: GOA_LNG, size: 0.8, color: "#4dd8e0" },
   ...DESTINATIONS.map((d) => ({
     lat: d.lat,
     lng: d.lng,
-    size: 0.3,
-    color: "rgba(30,120,160,0.7)",
+    size: 0.4,
+    color: "#4dd8e0",
   })),
 ];
 
@@ -71,12 +71,14 @@ function GlobeFallback({ height }: { height: number }) {
       data-testid="globe-fallback"
     >
       <p className="text-sm text-muted-foreground text-center px-4">
-        Interactive 3D globe — showing the spread of Goa's trance heritage to Portugal, Hungary, Brazil, Germany, Thailand, and Australia.
+        Interactive 3D globe — showing the spread of Goa's trance heritage worldwide.
       </p>
       <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-        <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-md">Goa</span>
+        <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-md">Goa (Origin)</span>
         {DESTINATIONS.map((d) => (
-          <span key={d.name} className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-md">{d.name}</span>
+          <span key={d.name} className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
+            {d.name} — {d.festival}
+          </span>
         ))}
       </div>
     </div>
@@ -117,26 +119,26 @@ function GlobeRenderer() {
         ref={globeRef}
         width={dimensions.width}
         height={dimensions.height}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         backgroundColor="rgba(0,0,0,0)"
-        atmosphereColor="#3c8cb4"
-        atmosphereAltitude={0.2}
+        atmosphereColor="#4dd8e0"
+        atmosphereAltitude={0.18}
         arcsData={arcsData}
-        arcColor={() => ["rgba(30,120,160,0.6)", "rgba(60,180,220,0.6)"]}
-        arcStroke={0.8}
-        arcDashLength={0.4}
-        arcDashGap={0.2}
-        arcDashAnimateTime={2000}
-        arcAltitudeAutoScale={0.4}
+        arcColor={() => ["rgba(77,216,224,0.7)", "rgba(120,230,240,0.7)"]}
+        arcStroke={1.2}
+        arcDashLength={0.5}
+        arcDashGap={0.15}
+        arcDashAnimateTime={1800}
+        arcAltitudeAutoScale={0.45}
         labelsData={labelsData}
         labelLat={(d: any) => d.lat}
         labelLng={(d: any) => d.lng}
         labelText={(d: any) => d.text}
         labelSize={(d: any) => d.size}
         labelColor={(d: any) => d.color}
-        labelResolution={2}
-        labelAltitude={0.01}
-        labelDotRadius={0.4}
+        labelResolution={3}
+        labelAltitude={0.015}
+        labelDotRadius={0.5}
         pointsData={pointsData}
         pointLat={(d: any) => d.lat}
         pointLng={(d: any) => d.lng}
@@ -144,7 +146,7 @@ function GlobeRenderer() {
         pointRadius={(d: any) => d.size}
         pointAltitude={0.01}
         ringsData={ringsData}
-        ringColor={() => (t: number) => `rgba(30,120,160,${1 - t})`}
+        ringColor={() => (t: number) => `rgba(77,216,224,${1 - t})`}
         ringMaxRadius="maxR"
         ringPropagationSpeed="propagationSpeed"
         ringRepeatPeriod="repeatPeriod"
