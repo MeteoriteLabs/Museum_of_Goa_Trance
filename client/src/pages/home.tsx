@@ -423,9 +423,109 @@ export default function Home() {
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
                 Chapter 7
               </span>
-              <span className="text-xs text-muted-foreground">The Ask</span>
+              <span className="text-xs text-muted-foreground">UNESCO Framework</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-7-title">
+              UNESCO & Intangible Cultural Heritage
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
+              In 2024, UNESCO inscribed Berlin's techno culture on its Representative List of the Intangible Cultural Heritage of Humanity. This landmark decision validated what practitioners had long argued: electronic music communities carry genuine cultural significance worthy of formal protection.
+            </p>
+            <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
+              The UNESCO framework for Intangible Cultural Heritage (ICH) recognises living traditions that communities transmit across generations — including performing arts, social practices, and festive events. Goa's trance heritage meets these criteria directly.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <Card className="mt-6 p-6">
+              <h4 className="font-semibold text-sm mb-4">The Berlin Precedent</h4>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">UNESCO ICH Inscription — 2024</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                      Berlin's techno scene was officially inscribed on UNESCO's Representative List, recognising its role in shaping social cohesion, creative expression, and urban identity.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">National ICH Inventory — 2022</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                      Germany first added Berlin techno to its national Intangible Cultural Heritage inventory in 2022, which paved the way for the UNESCO nomination.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Structured Community Involvement</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                      The nomination was driven by Rave The Planet, a community-led initiative that documented Berlin's techno heritage, organised stakeholder engagement, and built institutional support over several years.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <Card className="mt-4 p-6">
+              <h4 className="font-semibold text-sm mb-3">How This Applies to Goa</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                India is a signatory to UNESCO's 2003 Convention for the Safeguarding of the Intangible Cultural Heritage. The pathway exists: document the heritage, build community consensus, secure state-level recognition, apply for national ICH inventory inclusion, and pursue UNESCO inscription.
+              </p>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <div className="text-center p-3 rounded-md bg-muted/50">
+                  <p className="text-xs font-medium text-primary">Step 1</p>
+                  <p className="text-xs text-muted-foreground mt-1">Document & Archive</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-muted/50">
+                  <p className="text-xs font-medium text-primary">Step 2</p>
+                  <p className="text-xs text-muted-foreground mt-1">Community Consensus</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-muted/50">
+                  <p className="text-xs font-medium text-primary">Step 3</p>
+                  <p className="text-xs text-muted-foreground mt-1">National ICH Listing</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-primary/5 border border-primary/10">
+                  <p className="text-xs font-medium text-primary">Step 4</p>
+                  <p className="text-xs text-muted-foreground mt-1">UNESCO Nomination</p>
+                </div>
+              </div>
+              <div className="mt-4 p-3 rounded-md bg-muted/30 text-center">
+                <p className="text-sm text-muted-foreground">
+                  If Berlin's techno — which originated in <strong className="text-foreground">Detroit</strong> — earned UNESCO recognition, Goa's trance heritage — born <strong className="text-foreground">in Goa itself</strong> — has an even stronger claim as the original birthplace.
+                </p>
+              </div>
+            </Card>
+          </ScrollReveal>
+        </section>
+
+        <section id="chapter-8" className="py-16 sm:py-20 scroll-mt-24">
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                Chapter 8
+              </span>
+              <span className="text-xs text-muted-foreground">The Ask</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-8-title">
               A Responsible Path Forward
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
