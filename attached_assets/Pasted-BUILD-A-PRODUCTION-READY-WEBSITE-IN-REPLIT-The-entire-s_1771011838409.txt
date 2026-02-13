@@ -1,0 +1,252 @@
+BUILD A PRODUCTION-READY WEBSITE IN REPLIT.
+The entire site must be a “timeline documentary” that STARTS FROM THE HERO SECTION (hero is Chapter 0).
+
+PROJECT
+Site title: “Protect the Birthplace — Goa’s Trance Heritage”
+Tagline: “A cultural preservation initiative documenting a globally significant music legacy born in Goa.”
+Primary CTA: “Sign the Petition” (link: PETITION_LINK)
+Secondary CTA: “Explore the Story” (scroll to next section)
+
+IMPORTANT TONE RULES
+- This is a heritage/policy/museum-style site (credible, calm).
+- Do NOT use neon/rave/psychedelic visuals.
+- Avoid the word “psychedelic”; use “Trance heritage”, “Goa trance legacy”.
+- No references to substances.
+- Use respectful, solutions-first language.
+
+TECH REQUIREMENTS (MUST)
+- Next.js 14+ (App Router) + TypeScript
+- Tailwind CSS
+- Framer Motion (subtle premium animations)
+- shadcn/ui for Button, Card, Accordion, Dialog (modal)
+- next/image for images, lazy loading
+- SEO (meta tags, OpenGraph, Twitter card), sitemap, robots.txt
+- Accessibility: semantic HTML, ARIA, keyboard nav, focus states
+- Performance: Lighthouse-friendly, no heavy libs beyond Framer Motion
+
+DEPLOYMENT
+- Must run cleanly on Replit (npm install / npm run dev).
+- Make it deploy-ready (Vercel/Netlify later).
+
+SITE STRUCTURE (4 PAGES)
+1) / (Home) — TIMELINE DOCUMENTARY (the whole story + CTA)
+2) /evidence — Charts + Sources + Methodology (skeptic-proof)
+3) /case — Preservation Plan (policy-safe detailed ask)
+4) /media — Press kit + share templates + assets
+
+CONFIG INPUTS (use constants.ts)
+- PETITION_LINK = "PASTE_CHANGE_ORG_LINK_HERE"
+- CONTACT_EMAIL = "contact@example.com"
+- SOCIAL_IG = "https://instagram.com/PLACEHOLDER"
+- SOCIAL_X = "https://x.com/PLACEHOLDER"
+
+ASSETS (ASSUME THESE EXIST IN /public)
+- /public/images/hero.jpg
+- /public/images/logo.png
+- /public/charts/graph1.png
+- /public/charts/graph2.png
+- /public/charts/graph3.png
+- /public/charts/pie_annual.png
+- /public/charts/pie_lifetime.png
+
+DESIGN SYSTEM
+- Background: off-white / paper (#FAF7F2 feel)
+- Text: charcoal
+- Accent: muted blue/green (subtle)
+- Typography: Inter (or system sans)
+- Layout: max-w-6xl, generous whitespace, clear dividers
+- Components: soft shadows, rounded-2xl, clean spacing
+
+GLOBAL NAV (MUST)
+- Sticky top navbar with logo + links: Home, The Case, Evidence, Media
+- CTA button always visible: “Sign the Petition”
+- Mobile: hamburger menu + bottom sticky CTA bar
+
+HOME PAGE (/) — HERO IS CHAPTER 0 OF TIMELINE
+Goal: Tell the story in 90 seconds AND convert.
+
+A) HERO / CHAPTER 0 (Full viewport)
+- Headline: “Protect the Birthplace: Preserve Goa’s Trance Heritage”
+- Subheadline: “A living cultural legacy with global impact—supporting livelihoods, tourism, and cultural exchange.”
+- Buttons:
+  Primary: Sign the Petition → PETITION_LINK (new tab)
+  Secondary: Explore the Story → scroll to Chapter 1 anchor
+- Add “Timeline Dots” at bottom of hero (horizontal):
+  Dot labels: “1960s–70s” “1980s” “1990s–2000s” “2010s” “2017–2025” “The Ask”
+- Add subtle “scroll hint” (down arrow) (one-time gentle bounce max 2x, then stop)
+
+Hero animations:
+- Headline reveals in staggered lines (fade + small y, 250ms)
+- Subheadline fades in
+- Buttons fade in
+- Timeline dots fade in with slight stagger
+
+B) STICKY TIMELINE RAIL + ACTIVE SECTION HIGHLIGHT (Desktop)
+- After hero, show a vertical timeline rail on the left.
+- As user scrolls, active section marker highlights.
+- On mobile: replace with top progress bar + section label.
+
+Implement scroll tracking:
+- Use IntersectionObserver to detect active section.
+- Update activeIndex state for rail/progress.
+
+TIMELINE CHAPTERS (HOME)
+Each chapter is a section with:
+- Title
+- 2–3 line story paragraph
+- “Why it matters” 1-liner
+- One visual card (image or chart)
+- Optional mini callout box (“Key point”)
+
+Chapters in order:
+
+CHAPTER 1: “1960s–70s — Emergence”
+- Story: Goa becomes a meeting point for global travellers and experimental music gatherings.
+- Visual: /images/hero.jpg or another placeholder archival image card.
+
+CHAPTER 2: “1980s — The Goa Sound”
+- Story: the distinct Goa trance sound takes shape, blending global electronic tools with local rhythm and spiritual philosophy (keep neutral).
+- Visual: a clean “culture card” (no rave graphics).
+
+CHAPTER 3: “1990s–2000s — Global Diaspora”
+- Story: travellers carry the sound worldwide; festivals abroad begin.
+- Visual: a world map with animated route lines from Goa to:
+  Portugal, Hungary, Brazil, Germany, Thailand, Australia.
+- Animation: SVG route lines draw on scroll (stroke-dashoffset), gentle.
+
+CHAPTER 4: “2010s — Global Value Creation”
+- Story: global festival ecosystems create major tourism revenue elsewhere.
+- Visual: /charts/pie_annual.png (chart card with caption + “View Sources” link to /evidence)
+- Include 2 bullet callouts: “Global value capture grew” + “Birthplace must preserve legacy”
+
+CHAPTER 5: “2017–2025 — Tourism Shift & Risk”
+- Story: total tourism is high, but high-value foreign and charter segments decline.
+- Visual: two chart cards side-by-side:
+  /charts/graph2.png (foreign decline)
+  /charts/graph3.png (charter decline)
+- Add a domestic tourism note if desired: “Domestic tourism remains strong; preserving global identity sustains premium value.”
+
+CHAPTER 6: “Global Precedent — Detroit → Berlin”
+- Create a clean infographic card:
+  Detroit (origin) → Berlin (supported ecosystem)
+  Goa (origin) → Risk of center shifting away
+- Include neutral reference: Berlin techno recognized in Germany’s national ICH inventory (no political tone).
+- Link: “See sources” → /evidence
+
+CHAPTER 7: “The Ask — A Responsible Path Forward”
+- Statement: “This initiative is not about unregulated activity. It is about structured, responsible cultural preservation.”
+- Accordion (shadcn/ui) with 5 pillars:
+  1) Cultural Recognition (living heritage framing)
+  2) Documentation & Archiving (museum/archive initiative)
+  3) Balanced Policy for Responsible Cultural Tourism
+  4) Designated Cultural Zones (non-residential, licensed, managed)
+  5) Sustainability Standards + Stakeholder Working Group
+- CTA block: “Sign the Petition” + “Share”
+
+C) QUICK FACTS STRIP (placed after Chapter 0 or after Chapter 5)
+Four cards:
+- “Tourism contribution to Goa GSDP: ~16.43%”
+- “Tourism-linked livelihoods: ~2.5 lakh”
+- “Foreign arrivals: ~8.9 lakh (2017) → ~5.17 lakh (2025)”
+- “Charter flights: 266 (2024) → 189 (2025)”
+
+D) SOURCES PREVIEW (end of home)
+- Short “Data integrity” callout:
+  “Hard data from Goa Tourism Dept & Govt of India PIB; global anchor from Boom Festival municipal impact report.”
+- Button: “View full Sources & Methodology” → /evidence
+
+E) FOOTER CTA
+- Petition button + share buttons (copy link, WhatsApp share, X share)
+- Contact email + socials
+
+CHART EXPERIENCE (ALL PAGES)
+- Use ChartCard component (image + title + caption).
+- Clicking opens ChartModal (Dialog) showing full image, caption, and “Source links” buttons.
+- Modal animation: gentle spring (Framer Motion) but minimal.
+
+EVIDENCE PAGE (/evidence)
+Goal: skeptic-proof.
+Sections:
+1) Charts gallery grid of all charts:
+   graph1, graph2, graph3, pie_annual, pie_lifetime
+2) “Hard Data vs Modeled Estimates” two-column block
+3) “Methodology” with bullet assumptions:
+   - attendance range, ticket range, multipliers
+   - conservative rounding down
+   - no underground economy
+4) Bibliography links list with labels (open new tab):
+   - Goa Tourism 2025 release
+   - Goa tourism historical PDFs
+   - PIB factsheet
+   - Boom impact report PDF
+   - Berlin techno heritage precedent references
+   - FestivalPro ecosystem reference
+   - Ozora reference
+
+CASE PAGE (/case)
+Goal: policy-safe plan.
+Sections:
+- What is being preserved (heritage framing)
+- Why it matters (jobs + tourism value)
+- Preservation model (balanced approach)
+- 5 pillars expanded (each with what it means in practice)
+- Sustainability & community balance
+- Working group proposal
+- CTA: sign petition
+
+MEDIA PAGE (/media)
+Goal: share frictionless.
+Include:
+- Press summary (200–250 words)
+- Key facts bullets (6–8)
+- Download assets section (link to /public files)
+- Social share templates:
+  - 1 short X post
+  - 1 IG caption
+  - 1 WhatsApp broadcast
+- Contact: mailto link
+
+ANIMATION RULES (STRICT)
+- No flashy effects.
+- Only:
+  - fade-up on scroll
+  - slight y translate
+  - subtle parallax on one image (optional)
+  - map route draw animation
+  - timeline rail highlight transitions
+  - modal open/close gentle spring
+- Duration: 200–350ms
+- Easing: easeOut
+- Avoid infinite loops except the scroll hint (max 2 bounces then stop).
+
+CODE ORGANIZATION (MUST)
+Create:
+- /app/page.tsx
+- /app/evidence/page.tsx
+- /app/case/page.tsx
+- /app/media/page.tsx
+- /components:
+  Navbar.tsx
+  MobileCTA.tsx
+  TimelineDots.tsx
+  TimelineRail.tsx
+  Section.tsx (generic)
+  EraSection.tsx
+  FactsGrid.tsx
+  ChartCard.tsx
+  ChartModal.tsx
+  AskAccordion.tsx
+  SourcesList.tsx
+  Footer.tsx
+- /lib/constants.ts (links, sources, facts, timeline data)
+- /lib/seo.ts
+
+DELIVERABLES
+- Provide full code with all pages implemented
+- Include “Run locally” instructions:
+  npm install
+  npm run dev
+- Ensure no runtime errors in Replit environment.
+
+NOW BUILD THE ENTIRE PROJECT ACCORDING TO THIS SPEC.
+Return the full file tree and the code for each file.
