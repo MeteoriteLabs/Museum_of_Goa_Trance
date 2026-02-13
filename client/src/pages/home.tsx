@@ -8,11 +8,10 @@ import { PETITION_LINK, TIMELINE_ERAS } from "@/lib/constants";
 import TimelineDots from "@/components/TimelineDots";
 import TimelineRail from "@/components/TimelineRail";
 import MobileProgress from "@/components/MobileProgress";
-import FactsGrid from "@/components/FactsGrid";
 import ChartCard from "@/components/ChartCard";
 import ChartModal from "@/components/ChartModal";
 import AskAccordion from "@/components/AskAccordion";
-import WorldMap from "@/components/WorldMap";
+import Globe from "@/components/Globe";
 import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 
@@ -257,17 +256,8 @@ export default function Home() {
             </p>
           </ScrollReveal>
           <div className="mt-6">
-            <WorldMap />
+            <Globe />
           </div>
-        </section>
-
-        <section className="py-16 sm:py-20">
-          <ScrollReveal>
-            <h3 className="text-lg font-semibold mb-6 text-center" data-testid="text-quick-facts">
-              Quick Facts
-            </h3>
-          </ScrollReveal>
-          <FactsGrid />
         </section>
 
         <section id="chapter-4" className="py-16 sm:py-20 scroll-mt-24">
