@@ -8,21 +8,21 @@ import { PETITION_LINK, TIMELINE_ERAS } from "@/lib/constants";
 import TimelineDots from "@/components/TimelineDots";
 import TimelineRail from "@/components/TimelineRail";
 import MobileProgress from "@/components/MobileProgress";
-import ChartCard from "@/components/ChartCard";
-import ChartModal from "@/components/ChartModal";
 import AskAccordion from "@/components/AskAccordion";
 import Globe from "@/components/Globe";
+import {
+  TranceRiseChart,
+  ForeignArrivalsChart,
+  AnnualEconomyPieChart,
+  LifetimeFootprintPieChart,
+  TourismGrowthChart,
+} from "@/components/Charts";
 import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showRail, setShowRail] = useState(false);
-  const [modalChart, setModalChart] = useState<{
-    src: string;
-    title: string;
-    caption?: string;
-  } | null>(null);
   const [bounceCount, setBounceCount] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -258,6 +258,9 @@ export default function Home() {
           <div className="mt-6">
             <Globe />
           </div>
+          <div className="mt-6">
+            <TranceRiseChart />
+          </div>
         </section>
 
         <section id="chapter-4" className="py-16 sm:py-20 scroll-mt-24">
@@ -279,31 +282,23 @@ export default function Home() {
             </p>
           </ScrollReveal>
           <div className="mt-6">
-            <ChartCard
-              src="/charts/pie_annual.png"
-              title="Annual Global Festival Tourism Revenue"
-              caption="Estimated annual revenue distribution across festival ecosystems worldwide."
-              onClick={() =>
-                setModalChart({
-                  src: "/charts/pie_annual.png",
-                  title: "Annual Global Festival Tourism Revenue",
-                  caption: "Estimated annual revenue distribution across festival ecosystems worldwide.",
-                })
-              }
-            />
+            <AnnualEconomyPieChart />
+          </div>
+          <div className="mt-4">
+            <LifetimeFootprintPieChart />
           </div>
           <ScrollReveal delay={0.1}>
             <div className="mt-6 space-y-2">
               <div className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-sm text-muted-foreground">
-                  Global value capture from Goa-inspired festivals grew significantly through the 2010s
+                  Boom Festival (Portugal) generates approximately $50–56 million in local economic impact during a single edition
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-sm text-muted-foreground">
-                  The birthplace must preserve its legacy to sustain cultural and economic relevance
+                  While Goa pioneered this culture, other countries now capture a growing share of the economic value
                 </p>
               </div>
               <Link href="/evidence">
@@ -334,32 +329,11 @@ export default function Home() {
               Why it matters: Domestic tourism remains strong, but preserving global identity sustains premium value.
             </p>
           </ScrollReveal>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <ChartCard
-              src="/charts/graph2.png"
-              title="Foreign Tourist Arrivals"
-              caption="Declining trend from ~8.9L (2017) to ~5.17L (2025)"
-              onClick={() =>
-                setModalChart({
-                  src: "/charts/graph2.png",
-                  title: "Foreign Tourist Arrivals",
-                  caption: "Declining trend in foreign tourist arrivals to Goa",
-                })
-              }
-            />
-            <ChartCard
-              src="/charts/graph3.png"
-              title="Charter Flights to Goa"
-              caption="Declining from 266 (2024) to 189 (2025)"
-              onClick={() =>
-                setModalChart({
-                  src: "/charts/graph3.png",
-                  title: "Charter Flights to Goa",
-                  caption: "Charter flight decline indicates reduced international interest",
-                })
-              }
-              delay={0.06}
-            />
+          <div className="mt-6">
+            <ForeignArrivalsChart />
+          </div>
+          <div className="mt-4">
+            <TourismGrowthChart />
           </div>
         </section>
 
@@ -549,16 +523,6 @@ export default function Home() {
 
       <Footer />
 
-      <ChartModal
-        open={!!modalChart}
-        onOpenChange={(open) => !open && setModalChart(null)}
-        src={modalChart?.src || ""}
-        title={modalChart?.title || ""}
-        caption={modalChart?.caption}
-        sourceLinks={[
-          { label: "View Sources", url: "/evidence" },
-        ]}
-      />
     </div>
   );
 }
