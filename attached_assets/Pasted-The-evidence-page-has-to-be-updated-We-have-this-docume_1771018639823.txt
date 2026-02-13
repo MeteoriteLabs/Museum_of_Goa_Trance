@@ -1,0 +1,135 @@
+The evidence page has to be updated. We have this document. You can use this to check as well. And what ever other things you used in the website to give the data credibility
+DATA SOURCES & METHODOLOGY
+Supporting Documentation for:
+“Protect Goa’s Trance Heritage as a Living Cultural Legacy”
+This section provides verifiable public data sources, references, and methodology used for all statistics, economic references, and visual graphs presented in this initiative.
+All data used has been sourced from official government publications, tourism reports, international festival economic reports, and publicly available industry references.
+Where precise global data is unavailable, conservative modeled estimates have been used and clearly labeled.
+---
+1. GOA TOURISM DATA (CORE FOUNDATION)
+Official Goa Tourism Department (Primary Source)
+Tourist arrivals, domestic vs foreign split, and charter flight data:
+https://goatourism.gov.in/blog-list/goa-records-strong-and-sustained-growth-in-tourist-arrivals-2025-figures-reflect-continued-momentum/
+Key figures used:
+• Total tourists 2025: ~1.08 crore
+• Domestic tourists 2025: ~1.02 crore
+• Foreign tourists 2025: ~5.17 lakh
+• Foreign tourists 2017 peak: ~8.9 lakh
+• Charter flights 2024: 266
+• Charter flights 2025: 189
+Used in: Tourism trend analysis
+Foreign tourist decline
+Charter flight decline graphs
+Economic dependency context
+---
+Goa Tourism Statistics Reports (Historical Reference)
+https://www.goatourism.gov.in/wp-content/uploads/2019/09/Tourist-Statistic_till_aug_2020.pdf
+Used for: Historical tourism growth context
+Foreign vs domestic trend patterns
+Long-term tourism development references
+---
+Media Confirmation of Foreign Tourist Decline
+Times of India reporting:
+https://timesofindia.indiatimes.com/city/goa/goa-saw-one-crore-tourists-in-2025-but-foreign-arrivals-below-pre-covid-levels/articleshow/126457882.cms
+Used to confirm: Foreign tourist decline vs pre-2017 peak
+Shift toward domestic-heavy tourism model
+---
+2. ECONOMIC DEPENDENCE ON TOURISM
+Government of India PIB Tourism Data
+https://www.pib.gov.in/FactsheetDetails.aspx?Id=150362
+Key figures used:
+• Tourism contributes ~16.43% to Goa GSDP
+• ~2.5 lakh jobs depend on tourism
+• ~40% workforce direct/indirect dependence
+Used in: Economic impact section
+Livelihood dependency context
+---
+3. GLOBAL FESTIVAL ECONOMIC DATA
+Boom Festival (Portugal) — Official Economic Impact Study
+Municipal economic impact report:
+https://www.idanha.pt/media/6404/boom-festival_relatoriofinal.pdf
+Key figures used:
+• ~€55.3 million total regional economic impact per edition
+• ~€29 million value added
+• ~951 jobs supported
+• Biennial festival (every 2 years)
+Method used: Annualized estimate calculated conservatively
+€55M ÷ 2 ≈ €27–30M annual equivalent
+Lifetime estimate: ~13 editions since 1997
+≈ €700M+ cumulative impact
+Used in: Global comparison charts
+Economic impact modeling
+---
+Ozora Festival (Hungary) — Attendance Reference
+https://en.wikipedia.org/wiki/Ozora_Festival
+Data used: ~30,000 attendance capacity
+Modeled estimates based on: Average ticket prices (€250–350)
+On-site spending
+Travel tourism multiplier
+Used conservatively for: Annual festival economy modeling
+Global ecosystem estimate
+---
+4. GLOBAL TRANCE FESTIVAL ECOSYSTEM SIZE
+Industry reference: https://www.festivalpro.com/festival-management/1323/news/2021/4/6/The-Emergence-of-the-PSY-Trance%20Festival.html
+Indicates: ~35+ major psytrance festivals globally
+Large international attendance patterns
+Used to model: Global ecosystem scale
+Festival economy range
+---
+5. INDIA FESTIVAL ECONOMIC CONTEXT
+Sunburn Festival Economic Contribution (Media Reference)
+https://www.thegoan.net/goa-news/sunburn-music-spins-money-rolls/2078.html
+Reported: ₹30–40 crore local economic contribution per edition (media-reported estimate)
+Used as: Supporting context for festival economic impact in Goa
+---
+6. GLOBAL CULTURAL HERITAGE PRECEDENTS
+Berlin techno recognized as cultural heritage: https://www.berlin.de/en/news/8311297-5559700-berlin-techno-culture-added-to-germanys.en.html
+Used to demonstrate: Global precedent for music culture preservation
+Policy recognition pathways
+---
+7. METHODOLOGY NOTES
+A. Hard Data Used Directly (No Modification)
+• Goa tourism statistics
+• Foreign tourist numbers
+• Charter flights
+• Tourism employment data
+• Boom Festival economic report
+These figures are used exactly as published.
+---
+B. Modeled Estimates (Clearly Labeled)
+Used only where global public data is fragmented:
+• Global trance festival economy
+• Ozora & similar festival economic ranges
+• Lifetime cumulative global impact
+All modeled values are:
+• Conservative
+• Rounded downward where uncertain
+• Based on publicly available attendance & ticket ranges
+• Do not include inflated sponsorship estimates
+• Do not include underground/unreported economy
+---
+C. Economic Modeling Assumptions
+Used across estimates:
+Average major festival attendance:
+10,000 – 40,000
+Average ticket price:
+$150 – $350
+Tourism multiplier applied conservatively: 1.5x – 2.5x direct spend
+All assumptions based on: published festival pricing
+tourism economics studies
+event impact reports
+---
+8. DEFENSIBILITY STATEMENT
+All modeled figures in this document are presented as:
+“Conservative estimates based on publicly available attendance, pricing, and economic impact studies.”
+This ensures: credibility
+policy defensibility
+media reliability
+Figures are intentionally conservative rather than exaggerated.
+---
+9. PURPOSE OF THIS DATA DOCUMENT
+This document is intended to:
+• Provide transparency of sources
+• Support informed public dialogue
+• Present cultural preservation as an evidence-based case
+• Enable policymakers, media, and stakeholders to review verifiable data
