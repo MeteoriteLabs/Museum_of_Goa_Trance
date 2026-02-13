@@ -49,22 +49,85 @@ export const ASK_PILLARS = [
 ];
 
 export const BIBLIOGRAPHY = [
-  { label: "Goa Tourism Department \u2014 2025 Statistical Release", url: "#" },
-  { label: "Goa Tourism \u2014 Historical Arrival Data PDFs", url: "#" },
-  { label: "Press Information Bureau (PIB) \u2014 India Tourism Factsheet", url: "#" },
-  { label: "Boom Festival \u2014 Municipal Economic Impact Report (PDF)", url: "#" },
-  { label: "Berlin Techno Heritage \u2014 National ICH Inventory Reference", url: "#" },
-  { label: "FestivalPro \u2014 Global Festival Ecosystem Analysis", url: "#" },
-  { label: "Ozora Festival \u2014 Community & Economic Impact Reference", url: "#" },
+  { label: "Goa Tourism Department \u2014 2025 Tourist Arrivals Statistical Release", url: "https://goatourism.gov.in/blog-list/goa-records-strong-and-sustained-growth-in-tourist-arrivals-2025-figures-reflect-continued-momentum/" },
+  { label: "Goa Tourism \u2014 Historical Arrival Data (up to Aug 2020)", url: "https://www.goatourism.gov.in/wp-content/uploads/2019/09/Tourist-Statistic_till_aug_2020.pdf" },
+  { label: "Times of India \u2014 Foreign Arrivals Below Pre-COVID Levels", url: "https://timesofindia.indiatimes.com/city/goa/goa-saw-one-crore-tourists-in-2025-but-foreign-arrivals-below-pre-covid-levels/articleshow/126457882.cms" },
+  { label: "Press Information Bureau (PIB) \u2014 India Tourism Factsheet", url: "https://www.pib.gov.in/FactsheetDetails.aspx?Id=150362" },
+  { label: "Boom Festival \u2014 Municipal Economic Impact Report (PDF)", url: "https://www.idanha.pt/media/6404/boom-festival_relatoriofinal.pdf" },
+  { label: "Ozora Festival \u2014 Attendance & Community Reference", url: "https://en.wikipedia.org/wiki/Ozora_Festival" },
+  { label: "FestivalPro \u2014 The Emergence of the Psy-Trance Festival", url: "https://www.festivalpro.com/festival-management/1323/news/2021/4/6/The-Emergence-of-the-PSY-Trance%20Festival.html" },
+  { label: "Sunburn Festival \u2014 Economic Contribution to Goa (The Goan)", url: "https://www.thegoan.net/goa-news/sunburn-music-spins-money-rolls/2078.html" },
+  { label: "Berlin Techno Culture \u2014 Added to Germany\u2019s National ICH Inventory", url: "https://www.berlin.de/en/news/8311297-5559700-berlin-techno-culture-added-to-germanys.en.html" },
 ];
 
 export const METHODOLOGY_ASSUMPTIONS = [
-  "Attendance ranges derived from published festival capacity and ticket-sale data",
-  "Ticket price ranges based on publicly available pricing across major festivals",
-  "Economic multipliers sourced from established tourism economics literature",
-  "All estimates conservatively rounded down to avoid overstatement",
-  "No underground or informal economy activity included in estimates",
-  "Domestic tourism contribution calculated separately from international segments",
+  "Average major festival attendance: 10,000\u201340,000 (from published capacity data)",
+  "Average ticket price range: $150\u2013$350 (from publicly available pricing)",
+  "Tourism multiplier applied conservatively: 1.5x\u20132.5x direct spend",
+  "All estimates conservatively rounded downward where uncertain",
+  "No underground or informal/unreported economy included in estimates",
+  "Assumptions based on published festival pricing, tourism economics studies, and event impact reports",
+  "Boom Festival annualized: \u20ac55M biennial impact \u00f7 2 \u2248 \u20ac27\u201330M annual equivalent",
+  "Boom lifetime estimate: ~13 editions since 1997 \u2248 \u20ac700M+ cumulative impact",
+];
+
+export const DATA_SOURCES = [
+  {
+    category: "Goa Tourism Data",
+    sources: [
+      { label: "Total tourists 2025: ~1.08 crore", detail: "Domestic: ~1.02 crore | Foreign: ~5.17 lakh" },
+      { label: "Foreign tourists 2017 peak: ~8.9 lakh", detail: "Significant decline in high-value international segment" },
+      { label: "Charter flights 2024: 266 | 2025: 189", detail: "Declining charter tourism access" },
+    ],
+    urls: [
+      { label: "Goa Tourism Dept \u2014 2025 Arrivals", url: "https://goatourism.gov.in/blog-list/goa-records-strong-and-sustained-growth-in-tourist-arrivals-2025-figures-reflect-continued-momentum/" },
+      { label: "Times of India \u2014 Foreign Arrivals Report", url: "https://timesofindia.indiatimes.com/city/goa/goa-saw-one-crore-tourists-in-2025-but-foreign-arrivals-below-pre-covid-levels/articleshow/126457882.cms" },
+    ],
+  },
+  {
+    category: "Economic Dependence on Tourism",
+    sources: [
+      { label: "Tourism contributes ~16.43% to Goa GSDP", detail: "Government of India PIB data" },
+      { label: "~2.5 lakh jobs depend on tourism", detail: "Direct and indirect employment" },
+      { label: "~40% workforce direct/indirect dependence", detail: "Livelihood dependency context" },
+    ],
+    urls: [
+      { label: "PIB India \u2014 Tourism Factsheet", url: "https://www.pib.gov.in/FactsheetDetails.aspx?Id=150362" },
+    ],
+  },
+  {
+    category: "Global Festival Economic Data",
+    sources: [
+      { label: "Boom Festival: ~\u20ac55.3M total regional impact per edition", detail: "~\u20ac29M value added | ~951 jobs supported | Biennial" },
+      { label: "Ozora Festival: ~30,000 attendance capacity", detail: "Modeled from avg ticket prices \u20ac250\u2013\u20ac350 + on-site spending" },
+      { label: "~35+ major psytrance festivals globally", detail: "Large international attendance patterns" },
+      { label: "Sunburn Festival: \u20b930\u201340 crore local economic contribution", detail: "Media-reported estimate per edition" },
+    ],
+    urls: [
+      { label: "Boom Festival \u2014 Impact Report (PDF)", url: "https://www.idanha.pt/media/6404/boom-festival_relatoriofinal.pdf" },
+      { label: "Ozora Festival \u2014 Wikipedia", url: "https://en.wikipedia.org/wiki/Ozora_Festival" },
+      { label: "FestivalPro \u2014 Psy-Trance Festival Emergence", url: "https://www.festivalpro.com/festival-management/1323/news/2021/4/6/The-Emergence-of-the-PSY-Trance%20Festival.html" },
+      { label: "Sunburn \u2014 The Goan", url: "https://www.thegoan.net/goa-news/sunburn-music-spins-money-rolls/2078.html" },
+    ],
+  },
+  {
+    category: "Cultural Heritage Precedents",
+    sources: [
+      { label: "Berlin techno recognized as cultural heritage", detail: "Added to Germany\u2019s national Intangible Cultural Heritage inventory" },
+    ],
+    urls: [
+      { label: "Berlin.de \u2014 Official Announcement", url: "https://www.berlin.de/en/news/8311297-5559700-berlin-techno-culture-added-to-germanys.en.html" },
+    ],
+  },
+];
+
+export const DEFENSIBILITY_STATEMENT = "All modeled figures are presented as conservative estimates based on publicly available attendance, pricing, and economic impact studies. This ensures credibility, policy defensibility, and media reliability. Figures are intentionally conservative rather than exaggerated.";
+
+export const DATA_PURPOSE_POINTS = [
+  "Provide transparency of sources",
+  "Support informed public dialogue",
+  "Present cultural preservation as an evidence-based case",
+  "Enable policymakers, media, and stakeholders to review verifiable data",
 ];
 
 export const PRESS_SUMMARY = `Goa\u2019s trance heritage represents one of the most significant cultural exports in modern music history. Born in the coastal villages of Goa in the 1960s and 70s, this unique musical tradition blended global electronic innovation with local rhythmic traditions and philosophical depth.
