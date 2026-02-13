@@ -375,7 +375,7 @@ export default function Home() {
               Detroit to Berlin — A Cautionary Parallel
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              History offers a clear precedent. Detroit originated techno — but it was Berlin that built the supported ecosystem, gaining global recognition. Germany added Berlin techno to its national Intangible Cultural Heritage inventory, demonstrating that structured heritage frameworks work.
+              History offers a clear precedent. Detroit originated techno — but it was Berlin that built the supported ecosystem, gaining global recognition. In 2024, UNESCO inscribed Berlin's techno culture on its Representative List of the Intangible Cultural Heritage of Humanity — a landmark decision validating that electronic music communities carry genuine cultural significance worthy of formal protection.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
@@ -393,10 +393,10 @@ export default function Home() {
                 <div className="text-center p-4 rounded-md bg-primary/5 border border-primary/10">
                   <p className="text-xs text-muted-foreground mb-1.5">Supported Ecosystem</p>
                   <p className="text-lg font-bold">Berlin</p>
-                  <p className="text-xs text-muted-foreground mt-1">National ICH Recognition</p>
+                  <p className="text-xs text-muted-foreground mt-1">UNESCO ICH — 2024</p>
                   <div className="mt-3 w-full h-px bg-border" />
                   <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                    Structured framework preserved heritage and generated economic value
+                    Structured framework preserved heritage and earned UNESCO recognition
                   </p>
                 </div>
               </div>
@@ -408,36 +408,8 @@ export default function Home() {
             </Card>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
-            <Link href="/evidence">
-              <Button variant="ghost" size="sm" className="mt-4" data-testid="link-view-sources-ch6">
-                See sources
-                <ArrowRight className="ml-1 h-3 w-3" />
-              </Button>
-            </Link>
-          </ScrollReveal>
-        </section>
-
-        <section id="chapter-7" className="py-16 sm:py-20 scroll-mt-24">
-          <ScrollReveal>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
-                Chapter 7
-              </span>
-              <span className="text-xs text-muted-foreground">UNESCO Framework</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-7-title">
-              UNESCO & Intangible Cultural Heritage
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              In 2024, UNESCO inscribed Berlin's techno culture on its Representative List of the Intangible Cultural Heritage of Humanity. This landmark decision validated what practitioners had long argued: electronic music communities carry genuine cultural significance worthy of formal protection.
-            </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
-              The UNESCO framework for Intangible Cultural Heritage (ICH) recognises living traditions that communities transmit across generations — including performing arts, social practices, and festive events. Goa's trance heritage meets these criteria directly.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <Card className="mt-6 p-6">
-              <h4 className="font-semibold text-sm mb-4">The Berlin Precedent</h4>
+            <Card className="mt-4 p-6">
+              <h4 className="font-semibold text-sm mb-4">UNESCO & Intangible Cultural Heritage</h4>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -463,7 +435,7 @@ export default function Home() {
                   <div>
                     <p className="text-sm font-medium">National ICH Inventory — 2022</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                      Germany first added Berlin techno to its national Intangible Cultural Heritage inventory in 2022, which paved the way for the UNESCO nomination.
+                      Germany first added Berlin techno to its national Intangible Cultural Heritage inventory in 2022, paving the way for the UNESCO nomination.
                     </p>
                   </div>
                 </div>
@@ -484,7 +456,7 @@ export default function Home() {
               </div>
             </Card>
           </ScrollReveal>
-          <ScrollReveal delay={0.15}>
+          <ScrollReveal delay={0.2}>
             <Card className="mt-4 p-6">
               <h4 className="font-semibold text-sm mb-3">How This Applies to Goa</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -515,17 +487,25 @@ export default function Home() {
               </div>
             </Card>
           </ScrollReveal>
+          <ScrollReveal delay={0.25}>
+            <Link href="/evidence">
+              <Button variant="ghost" size="sm" className="mt-4" data-testid="link-view-sources-ch6">
+                See sources
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </Button>
+            </Link>
+          </ScrollReveal>
         </section>
 
-        <section id="chapter-8" className="py-16 sm:py-20 scroll-mt-24">
+        <section id="chapter-7" className="py-16 sm:py-20 scroll-mt-24">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
-                Chapter 8
+                Chapter 7
               </span>
               <span className="text-xs text-muted-foreground">The Ask</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-8-title">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-7-title">
               A Responsible Path Forward
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">

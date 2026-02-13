@@ -10,8 +10,7 @@ export const TIMELINE_ERAS = [
   { label: "2010s", id: "chapter-4" },
   { label: "2017\u20132025", id: "chapter-5" },
   { label: "Precedent", id: "chapter-6" },
-  { label: "UNESCO", id: "chapter-7" },
-  { label: "The Ask", id: "chapter-8" },
+  { label: "The Ask", id: "chapter-7" },
 ];
 
 export const QUICK_FACTS = [
