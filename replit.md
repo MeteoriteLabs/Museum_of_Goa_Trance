@@ -13,7 +13,7 @@ A museum/heritage-style website documenting Goa's trance heritage as a cultural 
 
 ## Pages
 1. `/` — Home: Timeline documentary with hero, 7 chapters, charts, globe visualization
-2. `/evidence` — Charts gallery, methodology, bibliography
+2. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
 3. `/case` — Preservation plan with 5 pillars
 4. `/media` — Press kit, social templates, downloadable assets
 
@@ -43,6 +43,7 @@ npm run dev
 - Subtle Framer Motion animations (fade-up, scroll reveal)
 
 ## Recent Changes
+- Updated Evidence page with comprehensive Data Sources & Methodology from official document — added Data Sources by Category (4 categories with key figures and real source URLs), expanded Hard Data vs Modeled Estimates, detailed Methodology & Assumptions with specific ranges, Defensibility & Purpose section, and full bibliography with 9 verified source links
 - Merged UNESCO/ICH content into Chapter 6 (Detroit to Berlin) — includes Berlin precedent timeline, 4-step UNESCO pathway for Goa
 - Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora) — animated arcs, labels, pulse rings from Goa
 - Removed Quick Facts section from home page
