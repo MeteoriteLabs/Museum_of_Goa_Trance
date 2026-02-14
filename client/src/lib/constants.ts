@@ -8,9 +8,10 @@ export const TIMELINE_ERAS = [
   { label: "1980s", id: "chapter-2" },
   { label: "1990s\u20132000s", id: "chapter-3" },
   { label: "2000s\u201310s", id: "chapter-4" },
-  { label: "2017\u20132025", id: "chapter-5" },
-  { label: "Precedent", id: "chapter-6" },
-  { label: "The Ask", id: "chapter-7" },
+  { label: "2010s\u201320s", id: "chapter-5" },
+  { label: "2020\u20132026", id: "chapter-6" },
+  { label: "Precedent", id: "chapter-7" },
+  { label: "The Ask", id: "chapter-8" },
 ];
 
 export interface SubMilestone {
@@ -63,11 +64,14 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "March 2024", title: "Revised State Action Plan for Noise Pollution", description: "The Goa Government notifies a revised State Action Plan under the Noise Pollution Rules, establishing updated enforcement protocols that further constrain cultural event spaces." },
     { year: "2024", title: "Venue Crackdowns in North Goa", description: "North Goa Police register cases against 11+ establishments including prominent venues. Equipment seizures, penalties, and enforcement actions target the remaining cultural infrastructure.", highlight: true },
     { year: "2024", title: "Charter Flight Decline", description: "Charter flights to Goa drop from 266 (in the previous year) to 189 \u2014 a significant decline in the primary channel for high-value international cultural tourists." },
-    { year: "2025", title: "Sunburn Exits Goa", description: "After nearly two decades, Sunburn Festival relocates to Mumbai due to sound pollution complaints, outstanding payments, and local opposition. India\u2019s largest EDM festival leaving its birthplace signals a turning point.", highlight: true },
-    { year: "2025\u201326", title: "Hilltop Endures as Cultural Anchor", description: "While Sunburn leaves and venues face crackdowns, Hilltop in Vagator continues operating \u2014 hosting its 15th annual festival in February 2026 with international psytrance artists. Founded in the early 1970s, it remains one of the last original cultural venues still active in Goa, representing over 50 years of unbroken heritage." },
-    { year: "2025", title: "Foreign Arrivals Continue to Decline", description: "Foreign tourist arrivals drop to approximately 5.17 lakh, down from the 2017 peak of 8.9 lakh. While domestic tourism reaches 1.08 crore, the high-value international cultural segment continues to erode." },
   ],
   "chapter-6": [
+    { year: "2025", title: "Sunburn Exits Goa", description: "After nearly two decades, Sunburn Festival relocates to Mumbai due to sound pollution complaints, outstanding payments, and local opposition. India\u2019s largest EDM festival leaving its birthplace signals a turning point.", highlight: true },
+    { year: "2025", title: "Foreign Arrivals Continue to Decline", description: "Foreign tourist arrivals drop to approximately 5.17 lakh, down from the 2017 peak of 8.9 lakh. While domestic tourism reaches 1.08 crore, the high-value international cultural segment continues to erode." },
+    { year: "2025\u201326", title: "Hilltop Endures as Cultural Anchor", description: "While Sunburn leaves and venues face crackdowns, Hilltop in Vagator continues operating \u2014 hosting its 15th annual festival in February 2026 with international psytrance artists. Founded in the early 1970s, it remains one of the last original cultural venues still active in Goa, representing over 50 years of unbroken heritage." },
+    { year: "Feb 2026", title: "Initiative for Museum of Goa Trance", description: "The Museum of Goa Trance initiative launches as a cultural preservation project dedicated to documenting, archiving, and celebrating Goa\u2019s trance heritage. The initiative combines a petition for formal recognition with plans for a dedicated museum and digital archive \u2014 ensuring the birthplace\u2019s story is preserved for future generations.", highlight: true },
+  ],
+  "chapter-7": [
     { year: "1980s", title: "Techno Originates in Detroit", description: "The techno genre emerges in Detroit, USA through pioneers like Juan Atkins, Derrick May, and Kevin Saunderson. However, lack of structured support and declining infrastructure would later cause its cultural centre to shift." },
     { year: "1989", title: "Berlin Wall Falls", description: "The fall of the Berlin Wall opens abandoned East Berlin industrial spaces. Young people occupy warehouses and factories for raves, giving techno a new home and cultural context." },
     { year: "1991", title: "Tresor Club Opens in Berlin", description: "Tresor, one of the world\u2019s most iconic techno clubs, opens in a former department store vault in East Berlin. It becomes a symbol of Berlin\u2019s emerging techno identity." },
@@ -75,7 +79,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "Nov 2022", title: "Heritage Application Submitted", description: "Rave The Planet submits an application to recognise Berlin\u2019s techno culture as intangible cultural heritage. The application is revised in May 2023 following feedback from the German UNESCO Commission.", highlight: true },
     { year: "March 2024", title: "Germany\u2019s National ICH Inventory", description: "Berlin\u2019s techno culture is officially inscribed on Germany\u2019s National Inventory of Intangible Cultural Heritage. Dr. Motte (founder of Love Parade) and Rave The Planet lead the recognition after a 13-year campaign originating with Hans Cousto\u2019s 2011 proposal.", highlight: true },
   ],
-  "chapter-7": [
+  "chapter-8": [
     { year: "Oct 2023", title: "Passing of Goa Gil", description: "Goa Gil (Gilbert Levey), widely known as the \u201CGodfather of Goa Trance,\u201D passes away at age 72. His death underscores the urgency of preserving the living memory and cultural heritage he helped create.", highlight: true },
     { year: "2026", title: "This Petition", description: "A formal call for recognition, documentation, balanced policy, designated cultural zones, and sustainability standards. The petition represents a structured, responsible path toward preserving Goa\u2019s trance heritage as a globally significant cultural legacy.", highlight: true },
   ],

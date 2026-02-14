@@ -322,23 +322,20 @@ export default function Home() {
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
                 Chapter 5
               </span>
-              <span className="text-xs text-muted-foreground">2017–2025</span>
+              <span className="text-xs text-muted-foreground">2010s–20s</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-5-title">
-              Tourism Shift & Risk
+              Regulatory Pressure Builds
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              While total tourism to Goa remains substantial, critical high-value segments have declined sharply. Foreign arrivals dropped from 8.9 lakh (2017) to 5.17 lakh (2025). Regulatory crackdowns on cultural venues, noise pollution enforcement, and Sunburn Festival's exit from Goa signal a cultural ecosystem under pressure.
+              After peaking at 8.9 lakh foreign arrivals in 2017, Goa's cultural tourism infrastructure came under increasing pressure. Noise pollution enforcement intensified, venue crackdowns targeted prominent establishments, and charter flights declined significantly — eroding the primary channels through which high-value international cultural tourists reached Goa.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
-              Why it matters: Domestic tourism remains strong, but preserving global identity sustains premium value and livelihoods.
+              Why it matters: The regulatory environment began constraining the cultural ecosystem that sustained Goa's global identity.
             </p>
           </ScrollReveal>
           <div className="mt-6">
             <ForeignArrivalsChart />
-          </div>
-          <div className="mt-4">
-            <TourismGrowthChart />
           </div>
           <SubTimeline milestones={CHAPTER_MILESTONES["chapter-5"]} />
         </section>
@@ -349,9 +346,33 @@ export default function Home() {
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
                 Chapter 6
               </span>
-              <span className="text-xs text-muted-foreground">Global Precedent</span>
+              <span className="text-xs text-muted-foreground">2020–2026</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-6-title">
+              Crisis & Response
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
+              The pressures building through the 2010s culminated in a turning point. Sunburn Festival — Asia's largest EDM festival — left Goa for Mumbai. Foreign arrivals continued to decline. Yet amid these losses, signs of cultural resilience emerged: Hilltop endured as a cultural anchor with over 50 years of heritage, and the Initiative for Museum of Goa Trance launched in February 2026 to document, archive, and preserve the birthplace's legacy.
+            </p>
+            <p className="mt-2 text-sm text-primary/80 font-medium">
+              Why it matters: As the cultural ecosystem faces its greatest threat, new preservation efforts signal a path forward.
+            </p>
+          </ScrollReveal>
+          <div className="mt-6">
+            <TourismGrowthChart />
+          </div>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-6"]} />
+        </section>
+
+        <section id="chapter-7" className="py-16 sm:py-20 scroll-mt-24">
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                Chapter 7
+              </span>
+              <span className="text-xs text-muted-foreground">Global Precedent</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-7-title">
               Detroit to Berlin — A Cautionary Parallel
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
@@ -469,24 +490,24 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={0.25}>
             <Link href="/evidence">
-              <Button variant="ghost" size="sm" className="mt-4" data-testid="link-view-sources-ch6">
+              <Button variant="ghost" size="sm" className="mt-4" data-testid="link-view-sources-ch7">
                 See sources
                 <ArrowRight className="ml-1 h-3 w-3" />
               </Button>
             </Link>
           </ScrollReveal>
-          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-6"]} />
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-7"]} />
         </section>
 
-        <section id="chapter-7" className="py-16 sm:py-20 scroll-mt-24">
+        <section id="chapter-8" className="py-16 sm:py-20 scroll-mt-24">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
-                Chapter 7
+                Chapter 8
               </span>
               <span className="text-xs text-muted-foreground">The Ask</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-7-title">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-8-title">
               A Responsible Path Forward
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
@@ -494,7 +515,7 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-7"]} />
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-8"]} />
 
           <div className="mt-8">
             <AskAccordion />

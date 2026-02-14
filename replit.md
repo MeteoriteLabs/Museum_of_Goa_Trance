@@ -12,7 +12,7 @@ A museum/heritage-style website documenting Goa's trance heritage as a cultural 
 - **No database required** — this is a static content site
 
 ## Pages
-1. `/` — Home: Timeline documentary with hero, 7 chapters, charts, globe visualization
+1. `/` — Home: Timeline documentary with hero, 8 chapters, charts, globe visualization
 2. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
 3. `/case` — Preservation plan with 5 pillars
 4. `/media` — Press kit, social templates, downloadable assets
@@ -43,12 +43,14 @@ npm run dev
 - Subtle Framer Motion animations (fade-up, scroll reveal)
 
 ## Recent Changes
-- Added 40+ factual sub-milestones across all 7 chapters via new SubTimeline component and CHAPTER_MILESTONES data in constants.ts
+- Restructured timeline from 7 to 8 chapters: split old Ch5 (2017–2025) into Ch5 (2010s–20s: Regulatory Pressure Builds) and Ch6 (2020–2026: Crisis & Response); renumbered Detroit/Berlin → Ch7, The Ask → Ch8
+- Added "Initiative for Museum of Goa Trance, February 2026" as highlighted milestone in new Chapter 6
+- Added 40+ factual sub-milestones across all 8 chapters via new SubTimeline component and CHAPTER_MILESTONES data in constants.ts
 - Created SubTimeline component (client/src/components/SubTimeline.tsx) — vertical timeline with dots, years, titles, descriptions
 - Enriched all chapter narratives with researched historical content (Eight Finger Eddie, Goa Gil, record labels, festivals, regulations)
 - Fixed Berlin techno heritage status throughout — correctly referenced as Germany's National Inventory of Intangible Cultural Heritage (March 2024), not UNESCO's global Representative List
 - Updated Chapter 4 era label from "2010s" to "2000s–10s"
 - Updated Evidence page with comprehensive Data Sources & Methodology — 37 bibliography entries, 6 data source categories (Goa Tourism, Economic Dependence, Global Festivals, Historical & Cultural Origins, Regulatory & Policy Context, Cultural Heritage Precedents), real news source URLs (Herald Goa, Scroll.in, RDX Goa, Music Ally, Travel and Tour World, Gomantak Times), Wikipedia, Discogs, documentary links, and label sites
 - Fixed timeline State Action Plan date from 2022 to March 2024 based on Herald Goa reporting
-- Merged UNESCO/ICH content into Chapter 6 (Detroit to Berlin) — includes Berlin precedent timeline, 4-step pathway for Goa
+- Merged UNESCO/ICH content into Chapter 7 (Detroit to Berlin, formerly Ch6) — includes Berlin precedent timeline, 4-step pathway for Goa
 - Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora)
