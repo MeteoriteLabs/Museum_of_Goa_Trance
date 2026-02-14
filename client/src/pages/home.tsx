@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -57,10 +57,14 @@ function ChapterFigures({ chapterId }: { chapterId: string }) {
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [showRail, setShowRail] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [atFooter, setAtFooter] = useState(false);
   const [bounceCount, setBounceCount] = useState(0);
   const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  const showRail = pastHero && !atFooter;
 
   useEffect(() => {
     const sectionIds = TIMELINE_ERAS.map((e) => e.id);
@@ -80,14 +84,21 @@ export default function Home() {
     });
 
     const heroObs = new IntersectionObserver(
-      ([entry]) => setShowRail(!entry.isIntersecting),
+      ([entry]) => setPastHero(!entry.isIntersecting),
       { threshold: 0.3 }
     );
     if (heroRef.current) heroObs.observe(heroRef.current);
 
+    const footerObs = new IntersectionObserver(
+      ([entry]) => setAtFooter(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (footerRef.current) footerObs.observe(footerRef.current);
+
     return () => {
       observers.forEach((o) => o.disconnect());
       heroObs.disconnect();
+      footerObs.disconnect();
     };
   }, []);
 
@@ -106,8 +117,32 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {showRail && <TimelineRail activeIndex={activeIndex} />}
-      {showRail && <MobileProgress activeIndex={activeIndex} />}
+      <AnimatePresence>
+        {showRail && (
+          <motion.div
+            key="timeline-rail-wrapper"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <TimelineRail activeIndex={activeIndex} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showRail && (
+          <motion.div
+            key="mobile-progress-wrapper"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <MobileProgress activeIndex={activeIndex} />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <section
         ref={heroRef}
@@ -595,7 +630,9 @@ export default function Home() {
         </section>
       </div>
 
-      <Footer />
+      <div ref={footerRef}>
+        <Footer />
+      </div>
 
     </div>
   );
