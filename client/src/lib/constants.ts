@@ -1,6 +1,6 @@
 export const PETITION_LINK = "PASTE_CHANGE_ORG_LINK_HERE";
 export const CONTACT_EMAIL = "contact@example.com";
-export const SOCIAL_IG = "https://instagram.com/PLACEHOLDER";
+export const SOCIAL_IG = "https://www.instagram.com/museumofgoatrance?igsh=MW9sOWY5cTNrd25tdQ==";
 export const SOCIAL_X = "https://x.com/PLACEHOLDER";
 
 export const TIMELINE_ERAS = [
