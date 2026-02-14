@@ -1,5 +1,5 @@
 export const PETITION_LINK = "https://www.change.org/p/protect-goa-s-trance-heritage-birthplace-of-a-global-music-culture";
-export const CONTACT_EMAIL = "contact@example.com";
+export const CONTACT_EMAIL = "museumofgoatrance@gmail.com";
 export const SOCIAL_IG = "https://www.instagram.com/museumofgoatrance?igsh=MW9sOWY5cTNrd25tdQ==";
 export const SOCIAL_X = "https://x.com/PLACEHOLDER";
 
