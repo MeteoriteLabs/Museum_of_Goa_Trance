@@ -446,6 +446,7 @@ export default function ExperiencePage() {
   const [config, setConfig] = useState<FluidConfig>({ ...DEFAULT_CONFIG });
   const [showSettings, setShowSettings] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showHint, setShowHint] = useState(true);
   const audioRef = useRef<{
     ctx: AudioContext;
     osc: OscillatorNode;
@@ -465,6 +466,19 @@ export default function ExperiencePage() {
   const resetConfig = useCallback(() => {
     setConfig({ ...DEFAULT_CONFIG });
     configRef.current = { ...DEFAULT_CONFIG };
+  }, []);
+
+  const hintDismissedRef = useRef(false);
+  const dismissHint = useCallback(() => {
+    if (!hintDismissedRef.current) {
+      hintDismissedRef.current = true;
+      setShowHint(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowHint(false), 4000);
+    return () => clearTimeout(timer);
   }, []);
 
   const randomSplats = useCallback(() => {
@@ -625,6 +639,7 @@ export default function ExperiencePage() {
     }
 
     const onMouseDown = (e: MouseEvent) => {
+      dismissHint();
       const rect = canvas!.getBoundingClientRect();
       const posX = e.clientX - rect.left;
       const posY = e.clientY - rect.top;
@@ -632,6 +647,7 @@ export default function ExperiencePage() {
     };
 
     const onMouseMove = (e: MouseEvent) => {
+      dismissHint();
       const rect = canvas!.getBoundingClientRect();
       const posX = e.clientX - rect.left;
       const posY = e.clientY - rect.top;
@@ -651,6 +667,7 @@ export default function ExperiencePage() {
     };
 
     const onTouchStart = (e: TouchEvent) => {
+      dismissHint();
       const touches = e.targetTouches;
       const rect = canvas!.getBoundingClientRect();
       while (pointers.length < touches.length) {
@@ -930,7 +947,19 @@ export default function ExperiencePage() {
         data-testid="canvas-fluid"
       />
 
-      <div className="absolute bottom-16 right-6 flex items-center gap-2 z-10">
+      {showHint && (
+        <div
+          className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+          style={{ animation: "fadeOut 4s ease-in-out forwards" }}
+          data-testid="hint-text"
+        >
+          <p className="text-white/70 text-lg sm:text-2xl font-light tracking-wide text-center px-6">
+            Touch anywhere for magic
+          </p>
+        </div>
+      )}
+
+      <div className="absolute bottom-16 right-4 sm:right-6 flex flex-col sm:flex-row items-end sm:items-center gap-2 z-20">
         <Button
           size="icon"
           variant="outline"
@@ -953,8 +982,8 @@ export default function ExperiencePage() {
 
       {showSettings && (
         <div
-          className="absolute top-14 right-0 w-72 sm:w-80 bg-gray-900/90 backdrop-blur-md border-l border-white/10 p-4 z-10 flex flex-col gap-3"
-          style={{ bottom: 0 }}
+          className="absolute top-14 right-0 w-72 sm:w-80 bg-gray-900/90 backdrop-blur-md border-l border-white/10 p-4 z-30 flex flex-col gap-3 overflow-y-auto"
+          style={{ bottom: 48 }}
           data-testid="panel-settings"
         >
           <div className="flex items-center justify-between mb-1">

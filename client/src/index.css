@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /* LIGHT MODE */
 :root {
   --button-outline: rgba(0,0,0, .10);
