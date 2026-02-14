@@ -326,9 +326,235 @@ export const SOCIAL_TEMPLATES = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
+  { label: "Culture", href: "/culture" },
   { label: "The Case", href: "/case" },
   { label: "Evidence", href: "/evidence" },
   { label: "Media", href: "/media" },
+];
+
+export interface CultureParallel {
+  ancient: string;
+  ancientDetail: string;
+  modern: string;
+  modernDetail: string;
+}
+
+export const NADA_BRAHMA_PARALLELS: CultureParallel[] = [
+  {
+    ancient: "Mantra & Repetition",
+    ancientDetail: "Vedic chanting uses rhythmic repetition of sacred syllables to focus the mind and induce meditative states. The concept of Japa \u2014 continuous recitation \u2014 is central to Hindu, Buddhist, and Jain practice.",
+    modern: "Hypnotic Basslines & Loops",
+    modernDetail: "Goa trance builds on repeating melodic patterns and basslines at 140\u2013150 BPM, creating a continuous rhythmic journey designed to shift consciousness \u2014 a digital form of the same repetitive principle.",
+  },
+  {
+    ancient: "Kirtan & Bhajan Gatherings",
+    ancientDetail: "Community devotional singing that continues for hours, creating collective spiritual experience through shared rhythm, call-and-response, and gradual emotional intensification.",
+    modern: "Open-Air Dance Gatherings",
+    modernDetail: "All-night communal dance experiences in natural settings, where the DJ guides a collective journey from darkness to sunrise \u2014 a shared ritual of movement, sound, and transcendence.",
+  },
+  {
+    ancient: "Nada Yoga (Sound Meditation)",
+    ancientDetail: "An ancient practice using sound vibrations to harmonise body and consciousness. The Nada Brahma philosophy holds that the entire cosmos is a manifestation of sound \u2014 \u0928\u093E\u0926 \u092C\u094D\u0930\u0939\u094D\u092E.",
+    modern: "Trance-State Through Sound",
+    modernDetail: "Electronic music as a vehicle for altered states of awareness. Goa Gil explicitly described his DJ sets as \u201Cpuja through music\u201D \u2014 using layered frequencies and sustained rhythms as tools for inner experience.",
+  },
+  {
+    ancient: "Temple Festivals & Melas",
+    ancientDetail: "Large open-air gatherings tied to lunar cycles and seasons \u2014 Theyyam in Kerala, Garba in Gujarat, Kumbh Mela \u2014 combining music, dance, ritual, and community into transformative collective experiences.",
+    modern: "Full Moon Parties & Seasonal Gatherings",
+    modernDetail: "Goa\u2019s party tradition followed Purnima (full moon) cycles and seasonal patterns. The gathering tradition \u2014 open to all, barrier-free, tied to natural rhythms \u2014 mirrors India\u2019s ancient mela culture.",
+  },
+  {
+    ancient: "Yantra, Mandala & Sacred Geometry",
+    ancientDetail: "Hindu and Buddhist traditions use intricate geometric patterns as meditation aids and sacred art \u2014 from temple carvings to kolam and rangoli, transforming spaces through visual symbolism.",
+    modern: "UV Art & Psychedelic Visuals",
+    modernDetail: "The Goa trance scene developed a distinctive visual language \u2014 fluorescent art, fractal patterns, and geometric decorations that transform natural spaces into immersive environments, echoing tantric visual traditions.",
+  },
+];
+
+export interface FusionMilestone {
+  era: string;
+  title: string;
+  description: string;
+}
+
+export const FUSION_TIMELINE: FusionMilestone[] = [
+  {
+    era: "Ancient",
+    title: "Nada Brahma \u2014 The World is Sound",
+    description: "Indian civilisation establishes sound as the foundational force of creation. The Sama Veda \u2014 one of the four Vedas \u2014 is entirely devoted to musical melody and chant.",
+  },
+  {
+    era: "Centuries",
+    title: "Guru-Shishya Parampara",
+    description: "Musical knowledge passes through direct lineage \u2014 guru to student \u2014 preserving and evolving traditions through lived experience rather than institutional structures.",
+  },
+  {
+    era: "1960s",
+    title: "Seekers Arrive on the Hippie Trail",
+    description: "Western travellers are drawn to India specifically because of its spiritual and philosophical traditions. They seek ashrams, yogis, and a way of life rooted in contemplative practice.",
+  },
+  {
+    era: "1970s",
+    title: "Convergence on Goa\u2019s Shores",
+    description: "On the beaches of Anjuna and Vagator, Indian spiritual openness meets Western experimental music. Full moon gatherings blend psychedelic rock with Eastern philosophy under open skies.",
+  },
+  {
+    era: "1980s",
+    title: "Electronic Sound Meets Spiritual Intent",
+    description: "Goa Gil frames the all-night DJ set as \u201Ctrance dance as active meditation\u201D \u2014 a puja through music. Electronic technology becomes a vehicle for ancient spiritual principles.",
+  },
+  {
+    era: "1990s",
+    title: "India\u2019s Cultural Innovation Goes Global",
+    description: "The fusion born on Indian soil spreads worldwide. Goa trance becomes a globally recognised genre \u2014 India\u2019s contribution to the electronic music landscape, rooted in Sanatan philosophy.",
+  },
+];
+
+export interface LivingTraditionTab {
+  id: string;
+  title: string;
+  description: string;
+  points: string[];
+  verse?: string;
+  verseSource?: string;
+}
+
+export const LIVING_TRADITION_TABS: LivingTraditionTab[] = [
+  {
+    id: "music",
+    title: "Music as Ritual",
+    description: "In Goa\u2019s trance tradition, the DJ is not a performer but a guide. The all-night set follows a deliberate arc \u2014 from deep, slow beginnings through building intensity to the climactic sunrise moment \u2014 mirroring the structure of a puja or yagna.",
+    points: [
+      "Goa Gil described his sets as \u201Credefining the ancient tribal ritual for the 21st century\u201D",
+      "Sunrise sets hold spiritual significance \u2014 the journey from darkness to light mirrors Surya Namaskar and dawn prayers across Indian traditions",
+      "Repetitive rhythmic structures at 140\u2013150 BPM create trance states, paralleling the role of repetition in Vedic chanting and dhrupad",
+      "The music is continuous and unbroken \u2014 designed as a single, sustained experience lasting 12\u201324 hours",
+    ],
+    verse: "\u0928\u093E\u0926 \u092C\u094D\u0930\u0939\u094D\u092E \u2014 \u201CThe world is sound\u201D",
+    verseSource: "Ancient Vedic concept",
+  },
+  {
+    id: "spaces",
+    title: "Sacred Spaces",
+    description: "Goa\u2019s parties were always held in natural settings \u2014 beaches, palm groves, hilltops, and forest clearings. This connects to the Sanatan tradition of vanam (forest) as a space for spiritual seeking, and the broader Indian practice of holding gatherings in nature.",
+    points: [
+      "Open-air gatherings under the stars echo the Indian tradition of holding spiritual events in natural settings \u2014 from forest ashrams to riverside ghats",
+      "The transformation of natural spaces through decorations, UV art, and lighting parallels how pandals and mandaps create sacred spaces for Indian festivals",
+      "Anjuna, Vagator, Hilltop, and Bamboo Forest became cultural landmarks \u2014 not built venues, but natural locations sanctified by decades of communal gathering",
+      "The relationship between landscape and experience is intrinsic \u2014 the laterite cliffs, Arabian Sea, and palm canopies of Goa shaped the culture itself",
+    ],
+  },
+  {
+    id: "visual",
+    title: "Visual Language",
+    description: "The psychedelic visual art of Goa\u2019s trance scene shares deep connections with India\u2019s own visual traditions. The geometric complexity of UV fluorescent art echoes the mathematical precision of yantras and mandalas found in Hindu and Buddhist practice.",
+    points: [
+      "Fluorescent and UV art traditions parallel the vibrant colour palettes of Indian temple art, Rajasthani miniatures, and festival decorations",
+      "Fractal and geometric patterns in the scene connect to yantra and mandala traditions \u2014 sacred geometry used as aids for meditation and spiritual focus",
+      "The practice of transforming spaces through visual art echoes rangoli and kolam \u2014 turning everyday surfaces into something transcendent",
+      "Stage and decoration aesthetics unique to the Goa scene blend organic forms with geometric precision, creating immersive environments",
+    ],
+  },
+  {
+    id: "community",
+    title: "Community & Hospitality",
+    description: "Goa\u2019s trance gatherings embody core values of Sanatan Dharma: Vasudhaiva Kutumbakam (\u201Cthe world is one family\u201D) and Atithi Devo Bhava (\u201Cthe guest is god\u201D). The culture was inherently inclusive, barrier-free, and welcoming to all.",
+    points: [
+      "No VIP sections, no barriers, no hierarchy \u2014 everyone shared the same space and experience, reflecting the egalitarian spirit of Indian communal gatherings",
+      "Goa\u2019s culture of welcoming travellers from every corner of the world is a living expression of Atithi Devo Bhava",
+      "The flea market, chai stall, and local vendor ecosystem created symbiotic relationships between the international community and Goan families",
+      "Vasudhaiva Kutumbakam in practice: 150+ nationalities coming together on Indian soil through shared cultural experience",
+    ],
+    verse: "\u0935\u0938\u0941\u0927\u0948\u0935 \u0915\u0941\u091F\u0941\u092E\u094D\u092C\u0915\u092E\u094D \u2014 \u201CThe world is one family\u201D",
+    verseSource: "Maha Upanishad 6.71\u201375",
+  },
+  {
+    id: "cycles",
+    title: "Cyclical Rhythms",
+    description: "Indian philosophy sees time as cyclical, not linear. Goa\u2019s trance culture naturally aligned with this worldview \u2014 gatherings tied to lunar cycles, seasonal patterns, and the daily rhythm of sunset to sunrise.",
+    points: [
+      "Full moon parties connect to the Indian tradition of Purnima celebrations \u2014 auspicious gatherings tied to the lunar calendar",
+      "The seasonal nature of the Goa party season (November\u2013March) mirrors traditional Indian festival calendars tied to harvest and weather cycles",
+      "Sunrise as the climactic moment echoes the spiritual significance of dawn across Indian traditions \u2014 Brahma Muhurta, Surya Namaskar, morning aartis",
+      "The annual return of the community to Goa each season reflects the cyclical pilgrimage traditions (yatra) embedded in Indian culture",
+    ],
+  },
+];
+
+export interface CultureTestimonial {
+  quote: string;
+  name: string;
+  role: string;
+}
+
+export const CULTURE_TESTIMONIALS: CultureTestimonial[] = [
+  {
+    quote: "The party is a prayer. The body is the prayer. The music is the body of the prayer. The dance is the prayer. We are redefining the ancient tribal ritual for the 21st century.",
+    name: "Goa Gil",
+    role: "Pioneer of Goa Trance, 1951\u20132023",
+  },
+  {
+    quote: "It was never about entertainment. It was about transformation. You came to Goa to change, and the music was the vehicle.",
+    name: "Community Voice",
+    role: "Long-time Goa Traveller",
+  },
+  {
+    quote: "When you play music from sunset to sunrise, you\u2019re following the oldest ritual there is. The sun goes down, you go within. The sun comes up, you are reborn.",
+    name: "Community Voice",
+    role: "Goa DJ & Cultural Practitioner",
+  },
+  {
+    quote: "In Goa, we didn\u2019t separate the tourist from the local, the musician from the listener. Everyone was part of the same circle. That\u2019s what made it sacred.",
+    name: "Community Voice",
+    role: "Anjuna Local & Venue Owner",
+  },
+  {
+    quote: "India gave the world yoga and meditation. Goa trance is another gift \u2014 a way of using sound and community to reach a higher state. This is Indian innovation.",
+    name: "Community Voice",
+    role: "Cultural Heritage Advocate",
+  },
+];
+
+export interface CulturalExport {
+  title: string;
+  description: string;
+  globalReach: string;
+}
+
+export const INDIAS_CULTURAL_EXPORTS: CulturalExport[] = [
+  {
+    title: "Yoga",
+    description: "A 5,000-year-old spiritual and physical discipline that has become a global wellness practice.",
+    globalReach: "Practised in 190+ countries",
+  },
+  {
+    title: "Meditation & Mindfulness",
+    description: "Rooted in Dhyana traditions from Hindu, Buddhist, and Jain practice, now central to global wellness.",
+    globalReach: "275+ million practitioners worldwide",
+  },
+  {
+    title: "Ayurveda",
+    description: "One of the world\u2019s oldest holistic healing systems, increasingly integrated into global healthcare.",
+    globalReach: "Recognised by WHO traditional medicine framework",
+  },
+  {
+    title: "Goa Trance Heritage",
+    description: "Born on Indian soil, fusing ancient sound philosophy with electronic innovation to create a global musical movement.",
+    globalReach: "150+ countries, 35+ major festivals, 50+ years",
+  },
+];
+
+export interface CultureStat {
+  value: string;
+  label: string;
+}
+
+export const CULTURE_STATS: CultureStat[] = [
+  { value: "150+", label: "Countries influenced by Goa\u2019s trance culture" },
+  { value: "50+", label: "Years of living heritage since the 1960s" },
+  { value: "35+", label: "Major psytrance festivals globally, all tracing roots to Goa" },
+  { value: "6", label: "Continents where Goa-origin festivals take place" },
 ];
 
 export const WORLD_MAP_ROUTES = [

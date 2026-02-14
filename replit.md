@@ -1,7 +1,7 @@
 # Protect the Birthplace — Goa's Trance Heritage
 
 ## Overview
-A museum/heritage-style website documenting Goa's trance heritage as a cultural preservation initiative. The site follows a timeline documentary format across 4 pages.
+A museum/heritage-style website documenting Goa's trance heritage as a cultural preservation initiative. The site follows a timeline documentary format across 5 pages.
 
 ## Architecture
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS + Framer Motion
@@ -13,9 +13,10 @@ A museum/heritage-style website documenting Goa's trance heritage as a cultural 
 
 ## Pages
 1. `/` — Home: Timeline documentary with hero, 8 chapters, charts, globe visualization
-2. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
-3. `/case` — Preservation plan with 5 pillars
-4. `/media` — Press kit, social templates, downloadable assets
+2. `/culture` — Culture & Heritage: Sanatan Dharma connections (Nada Brahma parallels, East-West fusion timeline, living tradition tabs, testimonial carousel, India's cultural exports with animated counters)
+3. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
+4. `/case` — Preservation plan with 5 pillars
+5. `/media` — Press kit, social templates, downloadable assets
 
 ## Key Components
 - `Navbar` — Sticky nav with mobile hamburger

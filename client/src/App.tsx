@@ -9,12 +9,14 @@ import Home from "@/pages/home";
 import Evidence from "@/pages/evidence";
 import CasePage from "@/pages/case";
 import MediaPage from "@/pages/media";
+import CulturePage from "@/pages/culture";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/culture" component={CulturePage} />
       <Route path="/evidence" component={Evidence} />
       <Route path="/case" component={CasePage} />
       <Route path="/media" component={MediaPage} />
