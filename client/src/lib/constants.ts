@@ -26,6 +26,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "Late 1960s", title: "Goa Joins the Hippie Trail", description: "Goa becomes a key destination on the overland Hippie Trail from Europe through Turkey, Iran, and Afghanistan to South Asia. Travelers are drawn by the beaches, low cost of living, and spiritual openness." },
     { year: "1969", title: "Goa Gil Arrives in Goa", description: "Gilbert Levey, later known as Goa Gil, arrives at age 18 after traveling from San Francisco via the Hippie Trail. He stays at Eight Finger Eddie\u2019s house before embarking on a spiritual journey across India, eventually becoming a Sadhu.", highlight: true },
     { year: "Early 1970s", title: "Full Moon Parties Begin", description: "Informal full moon gatherings emerge on Goa\u2019s beaches, blending Western psychedelic rock with Eastern spirituality. Artists and musicians from around the world converge for campfire sessions featuring Pink Floyd, Grateful Dead, and Led Zeppelin." },
+    { year: "~1973\u201374", title: "Hilltop Founded in Vagator", description: "Steve D\u2019Souza opens a small roadside restaurant on a hilltop between Vagator and Anjuna beaches. The first Hilltop New Year\u2019s party is held in 1974, launching what would become one of Goa\u2019s most iconic and enduring cultural venues \u2014 still operating over 50 years later.", highlight: true },
     { year: "1975", title: "Anjuna Flea Market Founded", description: "Eight Finger Eddie starts the Anjuna Flea Market as a barter platform for traveling hippies. It becomes a cultural hub connecting travelers, locals, and artisans \u2014 and still operates today.", highlight: true },
     { year: "1979", title: "First Electronic Music in Goa", description: "Kraftwerk tracks are played for the first time on Goa\u2019s beaches by visiting DJs, marking the earliest shift from acoustic rock to electronic sounds. This pivotal moment planted the seed for the genre that would follow.", highlight: true },
   ],
@@ -33,7 +34,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "1983", title: "The Electronic Switch", description: "Goa Gil, DJ Laurent, and Fred Disko transition from psychedelic rock to electronic music, introducing EBM (Electronic Body Music), acid house, and industrial sounds to the beach party circuit.", highlight: true },
     { year: "Mid-1980s", title: "Trance Dance as Active Meditation", description: "Goa Gil develops the philosophy of \u201Ctrance dance as active meditation,\u201D framing all-night DJ sets as spiritual journeys from darkness to light. Music becomes more than entertainment \u2014 it becomes ritual." },
     { year: "Mid-1980s", title: "Custom Mix Culture Emerges", description: "DJs begin creating unique sets by looping melodies, removing vocals, and extending tracks. Artists like Front 242 and Nitzer Ebb influence the evolving sound alongside emerging acid house from Europe." },
-    { year: "Late 1980s", title: "Party Circuit Established", description: "Regular party venues emerge across North Goa \u2014 Bamboo Forest (Anjuna), Disco Valley (Vagator), and beaches in Arambol. The Goa party circuit becomes a seasonal institution attracting international travelers." },
+    { year: "Late 1980s", title: "Party Circuit Established", description: "Regular party venues emerge across North Goa \u2014 Bamboo Forest (Anjuna), Disco Valley (Vagator), Hilltop (Vagator), and beaches in Arambol. The Goa party circuit becomes a seasonal institution attracting international travelers. Hilltop, founded as a restaurant in the early 1970s, evolves into a key electronic music venue." },
     { year: "Late 1980s", title: "Goa Gil\u2019s Music House", description: "Goa Gil founds the Music House in Vagator, a rehearsal and party hub hosting up to 20 musicians. Bands like the Anjuna Jam Band form here, bridging the rock era with the electronic future." },
   ],
   "chapter-3": [
@@ -53,6 +54,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "2009", title: "CNN Top 10 Festival Recognition", description: "CNN ranks Sunburn Festival among the Top 10 festivals in the world, reinforcing Goa\u2019s position as a globally recognised music destination." },
     { year: "2010s", title: "Global Festival Ecosystem Matures", description: "Boom Festival (Portugal) grows to 40,000+ attendees from 150+ countries. Ozora Festival (Hungary) draws ~30,000. Over 35 major psytrance festivals operate globally, all tracing cultural lineage to Goa." },
     { year: "2010s", title: "Psytrance Enters Mainstream EDM", description: "Artists like Vini Vici, Astrix, and Infected Mushroom bring psytrance to mainstream festivals including Tomorrowland, Ultra, and EDC. The Goa-origin sound reaches audiences who may never have heard the term \u201CGoa trance.\u201D" },
+    { year: "~2012", title: "Hilltop Festival Launches", description: "Hilltop in Vagator launches its own multi-day psytrance festival, featuring international artists across multiple stages. By 2026, it reaches its 15th edition, becoming one of the few major psytrance festivals still rooted in Goa \u2014 the genre\u2019s birthplace.", highlight: true },
     { year: "2012", title: "Goa Hippie Tribe Documentary", description: "Interactive documentary Goa Hippie Tribe (Darius Devas, SBS) reunites original Goa hippies via social media, documenting the living memory of the scene\u2019s founders." },
   ],
   "chapter-5": [
@@ -62,6 +64,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "2024", title: "Venue Crackdowns in North Goa", description: "North Goa Police register cases against 11+ establishments including prominent venues. Equipment seizures, penalties, and enforcement actions target the remaining cultural infrastructure.", highlight: true },
     { year: "2024", title: "Charter Flight Decline", description: "Charter flights to Goa drop from 266 (in the previous year) to 189 \u2014 a significant decline in the primary channel for high-value international cultural tourists." },
     { year: "2025", title: "Sunburn Exits Goa", description: "After nearly two decades, Sunburn Festival relocates to Mumbai due to sound pollution complaints, outstanding payments, and local opposition. India\u2019s largest EDM festival leaving its birthplace signals a turning point.", highlight: true },
+    { year: "2025\u201326", title: "Hilltop Endures as Cultural Anchor", description: "While Sunburn leaves and venues face crackdowns, Hilltop in Vagator continues operating \u2014 hosting its 15th annual festival in February 2026 with international psytrance artists. Founded in the early 1970s, it remains one of the last original cultural venues still active in Goa, representing over 50 years of unbroken heritage." },
     { year: "2025", title: "Foreign Arrivals Continue to Decline", description: "Foreign tourist arrivals drop to approximately 5.17 lakh, down from the 2017 peak of 8.9 lakh. While domestic tourism reaches 1.08 crore, the high-value international cultural segment continues to erode." },
   ],
   "chapter-6": [
@@ -151,6 +154,10 @@ export const BIBLIOGRAPHY = [
   { label: "TIP Records \u2014 Official Site (Since 1994)", url: "https://www.tiprecords.com/label/" },
   { label: "Matsuri Productions \u2014 History & Label Profile (Discogs)", url: "https://www.discogs.com/label/2621-Matsuri-Productions" },
   { label: "Flying Rhino Records \u2014 Label Profile (Discogs)", url: "https://www.discogs.com/label/1710-Flying-Rhino-Records" },
+  { label: "Hilltop Goa \u2014 Venue History & Party Guide (Holidify)", url: "https://www.holidify.com/places/goa/hill-top-sightseeing-125321.html" },
+  { label: "Hilltop Goa \u2014 Trance Party Destination Guide (Tripoto)", url: "https://www.tripoto.com/vagator/places-to-visit/hill-top-goa" },
+  { label: "Hilltop Festival 2026 \u2014 15th Edition (Madvibes)", url: "https://tickets.madvibes.in/product/hilltopfestivalgoa/" },
+  { label: "Hilltop Goa \u2014 Official Instagram (@hilltopgoa)", url: "https://www.instagram.com/hilltopgoa/" },
 ];
 
 export const METHODOLOGY_ASSUMPTIONS = [
@@ -220,6 +227,8 @@ export const DATA_SOURCES = [
       { label: "CNN ranked Sunburn in Top 10 festivals worldwide (2009)", detail: "Reinforced Goa\u2019s position as a globally recognised music destination" },
       { label: "Goa Hippie Tribe documentary (2012, SBS/Darius Devas)", detail: "Interactive documentary reuniting original Goa hippies via social media" },
       { label: "Goa Gil passes away Oct 2023, aged 72", detail: "Known as the \u201CGodfather of Goa Trance\u201D; underscored urgency of heritage preservation" },
+      { label: "Hilltop founded ~1973\u201374 in Vagator by Steve D\u2019Souza", detail: "Started as roadside restaurant; evolved into iconic trance venue; first NYE party in 1974; still operating 50+ years later" },
+      { label: "Hilltop Festival launched ~2012, now in 15th edition (Feb 2026)", detail: "Multi-day psytrance festival with international artists; one of the few major festivals still rooted in Goa\u2019s birthplace" },
     ],
     urls: [
       { label: "Goa Trance \u2014 Wikipedia", url: "https://en.wikipedia.org/wiki/Goa_trance" },
@@ -238,6 +247,9 @@ export const DATA_SOURCES = [
       { label: "Tranceform Records \u2014 Anima Mundi (Neo-Goa, 2003)", url: "https://tranceformrecords.bandcamp.com/album/anima-mundi" },
       { label: "TIP Records \u2014 Discogs Discography", url: "https://www.discogs.com/label/2542-TIP-Records" },
       { label: "TIP Records \u2014 Official Site", url: "https://www.tiprecords.com/label/" },
+      { label: "Hilltop Goa \u2014 Venue History (Holidify)", url: "https://www.holidify.com/places/goa/hill-top-sightseeing-125321.html" },
+      { label: "Hilltop Goa \u2014 Guide (Tripoto)", url: "https://www.tripoto.com/vagator/places-to-visit/hill-top-goa" },
+      { label: "Hilltop Festival 2026 \u2014 15th Edition", url: "https://tickets.madvibes.in/product/hilltopfestivalgoa/" },
     ],
   },
   {
