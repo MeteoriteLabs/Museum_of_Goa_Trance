@@ -40,12 +40,15 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  const isImmersive = location === "/experience";
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Navbar />
+        {!isImmersive && <Navbar />}
         <Router />
-        <MobileCTA />
+        {!isImmersive && <MobileCTA />}
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,9 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Volume2, VolumeX } from "lucide-react";
-import { PETITION_LINK } from "@/lib/constants";
-import Footer from "@/components/Footer";
+import { Volume2, VolumeX } from "lucide-react";
 
 function compileShader(gl: WebGLRenderingContext, type: number, source: string) {
   const shader = gl.createShader(type)!;
@@ -124,10 +121,18 @@ void main() {
   gl_FragColor = vec4(col, 1.0);
 }`;
 
-function FluidCanvas() {
+export default function ExperiencePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5, down: 0 });
   const rafRef = useRef<number>(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<{
+    ctx: AudioContext;
+    osc: OscillatorNode;
+    lfo: OscillatorNode;
+    gain: GainNode;
+  } | null>(null);
+  const stopTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -178,78 +183,39 @@ function FluidCanvas() {
     };
     render();
 
-    const handleVisibility = () => {
-      paused = document.hidden;
-    };
+    const handleVisibility = () => { paused = document.hidden; };
     document.addEventListener("visibilitychange", handleVisibility);
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouseRef.current.x = e.clientX / window.innerWidth;
+      mouseRef.current.y = 1.0 - e.clientY / window.innerHeight;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      mouseRef.current.x = e.touches[0].clientX / window.innerWidth;
+      mouseRef.current.y = 1.0 - e.touches[0].clientY / window.innerHeight;
+    };
+    const onDown = () => { mouseRef.current.down = 1; };
+    const onUp = () => { mouseRef.current.down = 0; };
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("mousedown", onDown);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchstart", onDown);
+    window.addEventListener("touchend", onUp);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("mousedown", onDown);
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("touchstart", onDown);
+      window.removeEventListener("touchend", onUp);
     };
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent | React.TouchEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
-    mouseRef.current.x = (clientX - rect.left) / rect.width;
-    mouseRef.current.y = 1.0 - (clientY - rect.top) / rect.height;
-  }, []);
-
-  const handleDown = useCallback(() => { mouseRef.current.down = 1; }, []);
-  const handleUp = useCallback(() => { mouseRef.current.down = 0; }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 w-full h-full"
-      style={{ zIndex: 0 }}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleMouseMove}
-      onMouseDown={handleDown}
-      onMouseUp={handleUp}
-      onTouchStart={handleDown}
-      onTouchEnd={handleUp}
-      data-testid="canvas-fluid"
-    />
-  );
-}
-
-const QUOTES = [
-  {
-    text: "Music is the language of the spirit. It opens the secret of life bringing peace, abolishing strife.",
-    author: "Kahlil Gibran",
-  },
-  {
-    text: "The dance floor is a sacred space where ego dissolves and unity begins.",
-    author: "Goa Gil",
-  },
-  {
-    text: "We don't stop playing because we grow old; we grow old because we stop playing.",
-    author: "George Bernard Shaw",
-  },
-];
-
-export default function ExperiencePage() {
-  const [quoteIndex, setQuoteIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<{
-    ctx: AudioContext;
-    osc: OscillatorNode;
-    lfo: OscillatorNode;
-    gain: GainNode;
-  } | null>(null);
-  const stopTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setQuoteIndex((i) => (i + 1) % QUOTES.length);
-    }, 8000);
-    return () => clearInterval(interval);
   }, []);
 
   const stopAudio = useCallback(() => {
@@ -337,189 +303,26 @@ export default function ExperiencePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen" data-testid="page-experience">
-      <FluidCanvas />
+    <div
+      className="fixed inset-0 w-screen h-screen overflow-hidden"
+      style={{ touchAction: "none" }}
+      data-testid="page-experience"
+    >
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+        data-testid="canvas-fluid"
+      />
 
-      <div className="fixed inset-0 bg-black/30" style={{ zIndex: 1 }} />
-
-      <div className="relative" style={{ zIndex: 2 }}>
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-center max-w-2xl mx-auto"
-          >
-            <p
-              className="text-white/50 text-xs uppercase tracking-[0.3em] mb-6 font-medium"
-              data-testid="text-experience-label"
-            >
-              Move your cursor to interact
-            </p>
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight"
-              data-testid="text-experience-title"
-            >
-              Feel the Flow
-            </h1>
-            <p
-              className="text-white/70 text-base sm:text-lg leading-relaxed max-w-lg mx-auto mb-10"
-              data-testid="text-experience-subtitle"
-            >
-              Goa trance was never just music. It was a living, breathing experience
-              that dissolved boundaries between self and sound, dancer and rhythm,
-              earth and cosmos.
-            </p>
-
-            <div className="flex items-center justify-center gap-3">
-              <a href={PETITION_LINK} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="bg-white/10 backdrop-blur-md border-white/20 text-white"
-                  data-testid="button-experience-petition"
-                >
-                  Sign the Petition
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
-              <Button
-                size="icon"
-                variant="outline"
-                className="bg-white/10 backdrop-blur-md border-white/20 text-white"
-                onClick={toggleAmbient}
-                data-testid="button-toggle-ambient"
-              >
-                {isPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-              </Button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-12 left-0 right-0 flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="text-white/40 text-xs tracking-widest uppercase"
-              data-testid="text-scroll-hint"
-            >
-              Scroll to explore
-            </motion.div>
-          </motion.div>
-        </div>
-
-        <div className="min-h-screen flex items-center justify-center px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
-            className="max-w-xl mx-auto text-center"
-          >
-            <div className="relative h-40 flex items-center justify-center" data-testid="quote-container">
-              {QUOTES.map((q, i) => (
-                <motion.div
-                  key={i}
-                  initial={false}
-                  animate={{
-                    opacity: i === quoteIndex ? 1 : 0,
-                    y: i === quoteIndex ? 0 : 20,
-                  }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute inset-0 flex flex-col items-center justify-center"
-                  style={{ pointerEvents: i === quoteIndex ? "auto" : "none" }}
-                >
-                  <p
-                    className="text-white/80 text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed"
-                    data-testid={`text-quote-${i}`}
-                  >
-                    "{q.text}"
-                  </p>
-                  <p
-                    className="text-white/40 text-sm mt-4 tracking-wide"
-                    data-testid={`text-quote-author-${i}`}
-                  >
-                    - {q.author}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="min-h-screen flex items-center justify-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
-              {[
-                { value: "50+", label: "Years of Sonic Heritage", desc: "From 1970s beach parties to global movement" },
-                { value: "148", label: "Countries Reached", desc: "Goa trance spread to every corner of the planet" },
-                { value: "1", label: "Sacred Birthplace", desc: "Anjuna, Goa - where it all began" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2, duration: 0.6 }}
-                  className="flex flex-col items-center"
-                  data-testid={`stat-block-${i}`}
-                >
-                  <span className="text-4xl sm:text-5xl font-bold text-white mb-2" data-testid={`text-stat-value-${i}`}>
-                    {stat.value}
-                  </span>
-                  <span className="text-white/70 text-sm font-medium mb-1" data-testid={`text-stat-label-${i}`}>
-                    {stat.label}
-                  </span>
-                  <span className="text-white/40 text-xs" data-testid={`text-stat-desc-${i}`}>
-                    {stat.desc}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="py-20 px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-lg mx-auto text-center"
-          >
-            <h2
-              className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4"
-              data-testid="text-cta-heading"
-            >
-              This heritage belongs to everyone.
-            </h2>
-            <p className="text-white/60 text-sm leading-relaxed mb-8" data-testid="text-cta-body">
-              Anjuna is not just a location on a map. It is the cradle of a global
-              musical revolution. Help us protect it for future generations.
-            </p>
-            <a href={PETITION_LINK} target="_blank" rel="noopener noreferrer">
-              <Button
-                className="bg-white text-black font-medium"
-                data-testid="button-cta-petition"
-              >
-                Add Your Voice
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-          </motion.div>
-        </div>
-
-        <Footer />
-      </div>
+      <Button
+        size="icon"
+        variant="outline"
+        className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border-white/20 text-white z-10"
+        onClick={toggleAmbient}
+        data-testid="button-toggle-ambient"
+      >
+        {isPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+      </Button>
     </div>
   );
 }
