@@ -304,15 +304,22 @@ export default function ExperiencePage() {
 
   return (
     <div
-      className="fixed inset-0 w-screen h-screen overflow-hidden"
-      style={{ touchAction: "none" }}
+      className="relative overflow-hidden bg-black"
+      style={{ width: "100vw", height: "100vh", touchAction: "none" }}
       data-testid="page-experience"
     >
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
+        style={{ display: "block" }}
         data-testid="canvas-fluid"
       />
+
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]">
+        <p className="text-white/30 text-sm tracking-widest uppercase select-none" data-testid="text-interact-hint">
+          Move to interact
+        </p>
+      </div>
 
       <Button
         size="icon"
