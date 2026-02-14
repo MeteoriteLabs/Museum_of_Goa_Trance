@@ -111,7 +111,7 @@ export default function MediaPage() {
                 { name: "Lifetime Impact Pie", file: "/charts/pie_lifetime.png" },
               ].map((asset) => (
                 <Card key={asset.file} className="p-4">
-                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <div className="flex items-center justify-between gap-3 flex-wrap min-w-0">
                     <span className="text-sm font-medium">{asset.name}</span>
                     <a href={asset.file} download>
                       <Button variant="outline" size="sm" data-testid={`button-download-${asset.name.toLowerCase().replace(/\s/g, "-")}`}>

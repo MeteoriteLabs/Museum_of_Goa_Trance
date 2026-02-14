@@ -1,20 +1,30 @@
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight, DollarSign, Music, Globe, Shield, Users } from "lucide-react";
 import { Link } from "wouter";
 import { PETITION_LINK, ASK_PILLARS, QUICK_FACTS } from "@/lib/constants";
 import ScrollReveal from "@/components/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 import Footer from "@/components/Footer";
 
 export default function CasePage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-[40vh] flex items-end pb-10 px-4" data-testid="case-hero">
+      <section className="relative min-h-[50vh] sm:min-h-[40vh] flex items-end pb-10 px-4" data-testid="case-hero">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="/images/hero.png"
             alt="Goa coastline"
             className="w-full h-full object-cover"
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
             data-testid="img-case-hero"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80" />
@@ -34,16 +44,18 @@ export default function CasePage() {
 
       <div className="max-w-4xl mx-auto px-4">
         <section className="py-12 sm:py-16" data-testid="quick-facts-section">
-          <ScrollReveal>
+          <StaggerContainer>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {QUICK_FACTS.map((fact, i) => (
-                <div key={i} className="text-center p-4 rounded-md bg-muted/50" data-testid={`stat-card-${i}`}>
-                  <p className="text-xl sm:text-2xl font-bold text-primary" data-testid={`text-stat-value-${i}`}>{fact.stat}</p>
-                  <p className="text-xs text-muted-foreground mt-1 leading-snug" data-testid={`text-stat-label-${i}`}>{fact.label}</p>
-                </div>
+                <StaggerItem key={i}>
+                  <div className="text-center p-4 rounded-md bg-muted/50" data-testid={`stat-card-${i}`}>
+                    <p className="text-xl sm:text-2xl font-bold text-primary" data-testid={`text-stat-value-${i}`}>{fact.stat}</p>
+                    <p className="text-xs text-muted-foreground mt-1 leading-snug" data-testid={`text-stat-label-${i}`}>{fact.label}</p>
+                  </div>
+                </StaggerItem>
               ))}
             </div>
-          </ScrollReveal>
+          </StaggerContainer>
         </section>
 
         <section className="pb-12 sm:pb-16">
@@ -63,37 +75,43 @@ export default function CasePage() {
               Why It Matters
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.05}>
+          <StaggerContainer>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Card className="p-5">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
-                  <DollarSign className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-medium text-sm mb-2" data-testid="text-economic-value">Economic Value</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Tourism contributes approximately 16.43% to Goa's GSDP, supporting an estimated 2.5 lakh livelihoods. Preserving the heritage that attracts high-value international tourists sustains premium tourism revenue.
-                </p>
-              </Card>
-              <Card className="p-5">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
-                  <Music className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-medium text-sm mb-2" data-testid="text-cultural-identity">Cultural Identity</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Goa's trance heritage represents one of the most significant cultural exports in modern music history. Without preservation, this identity risks being erased or permanently claimed by other regions.
-                </p>
-              </Card>
-              <Card className="p-5">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
-                  <Globe className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-medium text-sm mb-2" data-testid="text-global-precedent">Global Precedent</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Berlin's techno culture — which originated in Detroit — earned Germany's national heritage recognition in March 2024. Goa's trance, born in Goa itself, has an even stronger claim as the original birthplace.
-                </p>
-              </Card>
+              <StaggerItem>
+                <Card className="p-5">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                    <DollarSign className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-sm mb-2" data-testid="text-economic-value">Economic Value</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Tourism contributes approximately 16.43% to Goa's GSDP, supporting an estimated 2.5 lakh livelihoods. Preserving the heritage that attracts high-value international tourists sustains premium tourism revenue.
+                  </p>
+                </Card>
+              </StaggerItem>
+              <StaggerItem>
+                <Card className="p-5">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                    <Music className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-sm mb-2" data-testid="text-cultural-identity">Cultural Identity</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Goa's trance heritage represents one of the most significant cultural exports in modern music history. Without preservation, this identity risks being erased or permanently claimed by other regions.
+                  </p>
+                </Card>
+              </StaggerItem>
+              <StaggerItem>
+                <Card className="p-5">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                    <Globe className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-sm mb-2" data-testid="text-global-precedent">Global Precedent</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Berlin's techno culture — which originated in Detroit — earned Germany's national heritage recognition in March 2024. Goa's trance, born in Goa itself, has an even stronger claim as the original birthplace.
+                  </p>
+                </Card>
+              </StaggerItem>
             </div>
-          </ScrollReveal>
+          </StaggerContainer>
         </section>
 
         <section className="pb-12 sm:pb-16">

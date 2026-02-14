@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, PETITION_LINK } from "@/lib/constants";
@@ -8,18 +8,25 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-[100] bg-background/90 backdrop-blur-md border-b"
       data-testid="navbar"
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 py-3">
+      <div className={`max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 ${scrolled ? "py-1.5" : "py-3"} transition-all duration-300`}>
         <Link href="/" className="flex items-center gap-2" data-testid="link-home-logo">
           <img
             src="/images/logo.png"
             alt="Protect the Birthplace"
-            className="h-8 w-8 rounded-full object-cover"
+            className={`${scrolled ? "h-6 w-6" : "h-8 w-8"} transition-all duration-300 rounded-full object-cover`}
           />
           <span className="font-semibold text-sm hidden sm:inline">
             Protect the Birthplace

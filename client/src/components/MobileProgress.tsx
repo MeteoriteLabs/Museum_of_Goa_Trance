@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { TIMELINE_ERAS } from "@/lib/constants";
 
 interface MobileProgressProps {
@@ -9,7 +10,13 @@ export default function MobileProgress({ activeIndex }: MobileProgressProps) {
   const label = TIMELINE_ERAS[activeIndex]?.label || "";
 
   return (
-    <div className="lg:hidden fixed top-[57px] left-0 right-0 z-[90] bg-background/90 backdrop-blur-sm border-b" data-testid="mobile-progress">
+    <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="lg:hidden fixed top-[57px] left-0 right-0 z-[90] bg-background/90 backdrop-blur-sm border-b"
+      data-testid="mobile-progress"
+    >
       <div className="max-w-6xl mx-auto px-4 py-1.5 flex items-center gap-3">
         <div className="flex-1 h-1 rounded-full bg-muted overflow-hidden">
           <div
@@ -21,6 +28,6 @@ export default function MobileProgress({ activeIndex }: MobileProgressProps) {
           {label}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -104,6 +104,13 @@ function AnimatedCounter({ value, label }: { value: string; label: string }) {
 export default function CulturePage() {
   const [activeTab, setActiveTab] = useState("music");
   const [activeEra, setActiveEra] = useState<string>("pioneers");
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const activeTabData = LIVING_TRADITION_TABS.find((t) => t.id === activeTab)!;
   const filteredPeople = NOTABLE_PEOPLE.filter((p) => p.era === activeEra);
@@ -119,6 +126,7 @@ export default function CulturePage() {
             src="/images/hero.png"
             alt="Goa cultural landscape"
             className="w-full h-full object-cover"
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
             data-testid="img-culture-hero"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/55 to-black/75" />

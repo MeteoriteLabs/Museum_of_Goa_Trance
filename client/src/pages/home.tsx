@@ -59,6 +59,7 @@ export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showRail, setShowRail] = useState(false);
   const [bounceCount, setBounceCount] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -91,6 +92,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (bounceCount < 2) {
       const timer = setTimeout(() => setBounceCount((c) => c + 1), 1500);
       return () => clearTimeout(timer);
@@ -112,6 +119,7 @@ export default function Home() {
             src="/images/hero.png"
             alt="Goa coastline"
             className="w-full h-full object-cover"
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         </div>
@@ -195,7 +203,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 lg:pl-36">
+      <div className="max-w-4xl mx-auto px-4 lg:pl-28 xl:pl-36">
         <section id="chapter-1" className="py-16 sm:py-20 scroll-mt-24">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">

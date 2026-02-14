@@ -98,7 +98,7 @@ export default function Footer() {
           A cultural preservation initiative. All data sourced from official government publications.
         </div>
       </div>
-      <div className="sm:hidden h-16" />
+      <div className="sm:hidden h-20" />
     </footer>
   );
 }
