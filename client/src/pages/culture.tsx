@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import {
   ArrowRight,
-  ArrowLeft,
   ChevronRight,
   Music,
   TreePine,
@@ -15,13 +14,15 @@ import {
   Brain,
   Paintbrush,
   BookOpen,
+  ExternalLink,
 } from "lucide-react";
 import {
   PETITION_LINK,
   NADA_BRAHMA_PARALLELS,
   FUSION_TIMELINE,
   LIVING_TRADITION_TABS,
-  CULTURE_TESTIMONIALS,
+  NOTABLE_PEOPLE,
+  NOTABLE_PEOPLE_ERAS,
   INDIAS_CULTURAL_EXPORTS,
   CULTURE_STATS,
   SCIENCE_EVIDENCE,
@@ -99,108 +100,13 @@ function AnimatedCounter({ value, label }: { value: string; label: string }) {
   );
 }
 
-function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((c) => (c + 1) % CULTURE_TESTIMONIALS.length);
-    }, 6000);
-  };
-
-  useEffect(() => {
-    resetTimer();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
-
-  const goTo = (index: number) => {
-    setCurrent(index);
-    resetTimer();
-  };
-
-  const prev = () => {
-    goTo((current - 1 + CULTURE_TESTIMONIALS.length) % CULTURE_TESTIMONIALS.length);
-  };
-
-  const next = () => {
-    goTo((current + 1) % CULTURE_TESTIMONIALS.length);
-  };
-
-  const testimonial = CULTURE_TESTIMONIALS[current];
-
-  return (
-    <div className="relative" data-testid="testimonial-carousel">
-      <Card className="p-6 sm:p-8 min-h-[220px] flex flex-col justify-center" aria-live="polite">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <blockquote className="text-base sm:text-lg leading-relaxed italic text-foreground/90 max-w-2xl mx-auto text-center" data-testid={`text-testimonial-quote-${current}`}>
-              "{testimonial.quote}"
-            </blockquote>
-            <div className="mt-4 text-center">
-              <p className="text-sm font-medium" data-testid={`text-testimonial-name-${current}`}>
-                {testimonial.name}
-              </p>
-              <p className="text-xs text-muted-foreground mt-0.5" data-testid={`text-testimonial-role-${current}`}>
-                {testimonial.role}
-              </p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </Card>
-
-      <div className="flex items-center justify-center gap-4 mt-4">
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={prev}
-          data-testid="button-testimonial-prev"
-          aria-label="Previous testimonial"
-        >
-          <ArrowLeft className="w-4 h-4" />
-        </Button>
-        <div className="flex items-center gap-2">
-          {CULTURE_TESTIMONIALS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`w-2 h-2 rounded-full ${
-                i === current
-                  ? "bg-primary"
-                  : "bg-muted-foreground/30"
-              }`}
-              data-testid={`button-testimonial-dot-${i}`}
-              aria-label={`Go to testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={next}
-          data-testid="button-testimonial-next"
-          aria-label="Next testimonial"
-        >
-          <ArrowRight className="w-4 h-4" />
-        </Button>
-      </div>
-    </div>
-  );
-}
 
 export default function CulturePage() {
   const [activeTab, setActiveTab] = useState("music");
+  const [activeEra, setActiveEra] = useState<string>("pioneers");
 
   const activeTabData = LIVING_TRADITION_TABS.find((t) => t.id === activeTab)!;
+  const filteredPeople = NOTABLE_PEOPLE.filter((p) => p.era === activeEra);
 
   return (
     <div className="min-h-screen">
@@ -492,27 +398,92 @@ export default function CulturePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20" data-testid="section-voices">
+        <section id="notable-people" className="py-16 sm:py-20" data-testid="section-notable-people">
           <ScrollReveal>
             <div className="text-center mb-8">
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
-                Community
+                The People
               </span>
               <h2
                 className="text-2xl sm:text-3xl font-bold tracking-tight mt-4"
-                data-testid="text-voices-title"
+                data-testid="text-notable-people-title"
               >
-                Voices of the Culture
+                Notable Figures
               </h2>
               <p className="text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
-                The people who lived it, built it, and continue to carry it forward.
+                The pioneers, architects, and global ambassadors who built and carried
+                this culture across five decades.
               </p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
-            <TestimonialCarousel />
+          <ScrollReveal delay={0.05}>
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+              {NOTABLE_PEOPLE_ERAS.map((era) => (
+                <Button
+                  key={era.id}
+                  variant={activeEra === era.id ? "secondary" : "ghost"}
+                  size="sm"
+                  onClick={() => setActiveEra(era.id)}
+                  data-testid={`button-era-${era.id}`}
+                >
+                  {era.label}
+                </Button>
+              ))}
+            </div>
           </ScrollReveal>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeEra}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            >
+              {filteredPeople.map((person, i) => (
+                <Card
+                  key={person.name}
+                  className="p-4 h-full"
+                  data-testid={`card-person-${i}`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-sm font-semibold text-primary">
+                          {person.name.charAt(0)}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h4 className="font-medium text-sm" data-testid={`text-person-name-${i}`}>
+                          {person.name}
+                        </h4>
+                        <a
+                          href={person.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary/60 flex-shrink-0"
+                          data-testid={`link-person-${i}`}
+                          aria-label={`Visit ${person.name}'s page`}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                      <p className="text-[11px] text-primary font-medium mt-0.5">
+                        {person.role} · {person.years}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                        {person.contribution}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </section>
 
         <section className="py-16 sm:py-20" data-testid="section-indias-gift">

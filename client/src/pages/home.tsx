@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ExternalLink, ChevronDown, ArrowRight } from "lucide-react";
-import { PETITION_LINK, TIMELINE_ERAS, CHAPTER_MILESTONES } from "@/lib/constants";
+import { PETITION_LINK, TIMELINE_ERAS, CHAPTER_MILESTONES, NOTABLE_PEOPLE } from "@/lib/constants";
 import TimelineDots from "@/components/TimelineDots";
 import TimelineRail from "@/components/TimelineRail";
 import MobileProgress from "@/components/MobileProgress";
@@ -20,6 +20,40 @@ import {
 } from "@/components/Charts";
 import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
+
+function ChapterFigures({ chapterId }: { chapterId: string }) {
+  const people = NOTABLE_PEOPLE.filter((p) => p.chapter === chapterId);
+  if (people.length === 0) return null;
+
+  const handleClick = () => {
+    window.location.href = "/culture#notable-people";
+  };
+
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-3" data-testid={`figures-${chapterId}`}>
+      <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold" data-testid={`text-key-figures-label-${chapterId}`}>Key Figures</span>
+      <div className="flex flex-wrap items-center gap-2">
+        {people.map((person) => (
+          <button
+            key={person.name}
+            onClick={handleClick}
+            className="flex items-center gap-1.5 rounded-full bg-muted/50 pl-1 pr-2.5 py-1 hover-elevate cursor-pointer"
+            data-testid={`button-figure-${person.name.replace(/\s/g, "-").toLowerCase()}`}
+          >
+            <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <span className="text-[10px] font-semibold text-primary">
+                {person.name.charAt(0)}
+              </span>
+            </div>
+            <span className="text-[11px] font-medium text-foreground/80 whitespace-nowrap">
+              {person.name}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -179,6 +213,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: This era established Goa as the birthplace of a globally significant cultural phenomenon.
             </p>
+            <ChapterFigures chapterId="chapter-1" />
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <Card className="mt-6 overflow-hidden">
@@ -217,6 +252,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: A unique cultural art form was born — one that would go on to define an entire genre.
             </p>
+            <ChapterFigures chapterId="chapter-2" />
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <Card className="mt-6 p-5">
@@ -257,6 +293,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: Goa's cultural export created thriving ecosystems across continents, spawning labels, festivals, and an entire genre.
             </p>
+            <ChapterFigures chapterId="chapter-3" />
           </ScrollReveal>
           <div className="mt-6">
             <Globe />
@@ -284,6 +321,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: While value was created globally, the birthplace must preserve its legacy.
             </p>
+            <ChapterFigures chapterId="chapter-4" />
           </ScrollReveal>
           <div className="mt-6">
             <AnnualEconomyPieChart />

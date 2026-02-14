@@ -508,37 +508,157 @@ export const LIVING_TRADITION_TABS: LivingTraditionTab[] = [
   },
 ];
 
-export interface CultureTestimonial {
-  quote: string;
+export interface NotablePerson {
   name: string;
   role: string;
+  contribution: string;
+  era: "pioneers" | "architects" | "global";
+  years: string;
+  link: string;
+  chapter?: string;
 }
 
-export const CULTURE_TESTIMONIALS: CultureTestimonial[] = [
+export const NOTABLE_PEOPLE_ERAS = [
+  { id: "pioneers", label: "1960s\u201370s Pioneers", years: "1960s\u201370s" },
+  { id: "architects", label: "1980s\u201390s Architects", years: "1980s\u201390s" },
+  { id: "global", label: "2000s+ Global Wave", years: "2000s\u2013Present" },
+] as const;
+
+export const NOTABLE_PEOPLE: NotablePerson[] = [
   {
-    quote: "The party is a prayer. The body is the prayer. The music is the body of the prayer. The dance is the prayer. We are redefining the ancient tribal ritual for the 21st century.",
+    name: "Eight Finger Eddie",
+    role: "Community Founder",
+    contribution: "Yertward Mazamanian discovered Anjuna in the mid-1960s and established the first communal gathering point. Founded the Anjuna Flea Market in 1975.",
+    era: "pioneers",
+    years: "1960s\u20132000s",
+    link: "https://en.wikipedia.org/wiki/Eight_Finger_Eddie",
+    chapter: "chapter-1",
+  },
+  {
     name: "Goa Gil",
-    role: "Pioneer of Goa Trance, 1951\u20132023",
+    role: "Pioneer & Spiritual Guide",
+    contribution: "Gilbert Levey arrived in Goa in 1969 via the Hippie Trail. Framed trance dance as \u201Cactive meditation\u201D and pioneered all-night DJ sets as spiritual journeys.",
+    era: "pioneers",
+    years: "1969\u20132023",
+    link: "https://en.wikipedia.org/wiki/Goa_Gil",
+    chapter: "chapter-1",
   },
   {
-    quote: "It was never about entertainment. It was about transformation. You came to Goa to change, and the music was the vehicle.",
-    name: "Community Voice",
-    role: "Long-time Goa Traveller",
+    name: "DJ Laurent",
+    role: "Pioneer DJ",
+    contribution: "One of the first DJs to transition from rock to electronic music on Goa\u2019s beaches in the early 1980s, helping define the original Goa sound.",
+    era: "pioneers",
+    years: "1980s\u2013present",
+    link: "https://en.wikipedia.org/wiki/Laurent_(musician)",
+    chapter: "chapter-2",
   },
   {
-    quote: "When you play music from sunset to sunrise, you\u2019re following the oldest ritual there is. The sun goes down, you go within. The sun comes up, you are reborn.",
-    name: "Community Voice",
-    role: "Goa DJ & Cultural Practitioner",
+    name: "Fred Disko",
+    role: "Pioneer DJ",
+    contribution: "Alongside Goa Gil and Laurent, Fred Disko was instrumental in the switch from psychedelic rock to electronic music on Goa\u2019s party circuit.",
+    era: "pioneers",
+    years: "1980s\u2013present",
+    link: "https://www.discogs.com/artist/105930-Fred-Disko",
+    chapter: "chapter-2",
   },
   {
-    quote: "In Goa, we didn\u2019t separate the tourist from the local, the musician from the listener. Everyone was part of the same circle. That\u2019s what made it sacred.",
-    name: "Community Voice",
-    role: "Anjuna Local & Venue Owner",
+    name: "Youth (Martin Glover)",
+    role: "Label Founder & Producer",
+    contribution: "Killing Joke bassist who founded Dragonfly Records in 1993 \u2014 the first label dedicated to Goa trance. Operated Butterfly Studios in London.",
+    era: "architects",
+    years: "1993\u2013present",
+    link: "https://en.wikipedia.org/wiki/Youth_(musician)",
+    chapter: "chapter-3",
   },
   {
-    quote: "India gave the world yoga and meditation. Goa trance is another gift \u2014 a way of using sound and community to reach a higher state. This is Indian innovation.",
-    name: "Community Voice",
-    role: "Cultural Heritage Advocate",
+    name: "Raja Ram",
+    role: "Artist & Label Founder",
+    contribution: "Australian-born flautist who co-founded TIP Records in 1994 and Shpongle. A key figure in bringing Goa trance to global audiences.",
+    era: "architects",
+    years: "1994\u2013present",
+    link: "https://en.wikipedia.org/wiki/Raja_Ram_(musician)",
+    chapter: "chapter-3",
+  },
+  {
+    name: "Simon Posford (Hallucinogen)",
+    role: "Producer & Artist",
+    contribution: "Creator of the landmark album Twisted (1995). Co-founded Shpongle with Raja Ram. His BBC-featured production defined the genre\u2019s sonic identity.",
+    era: "architects",
+    years: "1994\u2013present",
+    link: "https://en.wikipedia.org/wiki/Simon_Posford",
+    chapter: "chapter-3",
+  },
+  {
+    name: "Paul Oakenfold",
+    role: "DJ & Broadcaster",
+    contribution: "His 1994 BBC Radio 1 \u201CGoa Mix\u201D (Essential Mix) introduced Goa trance to millions worldwide, a pivotal moment in the genre\u2019s global recognition.",
+    era: "architects",
+    years: "1994",
+    link: "https://en.wikipedia.org/wiki/Paul_Oakenfold",
+    chapter: "chapter-3",
+  },
+  {
+    name: "Astral Projection",
+    role: "Producers & Artists",
+    contribution: "Israeli duo (Avi Nissim & Lior Perlmutter) whose albums Dancing Galaxy and Trust in Trance defined the melodic Goa trance sound of the mid-1990s.",
+    era: "architects",
+    years: "1996\u2013present",
+    link: "https://en.wikipedia.org/wiki/Astral_Projection_(group)",
+    chapter: "chapter-3",
+  },
+  {
+    name: "Juno Reactor",
+    role: "Producer & Live Act",
+    contribution: "Ben Watkins\u2019 project blending Goa trance with world music and orchestral elements. Known for Matrix trilogy soundtrack contributions.",
+    era: "architects",
+    years: "1993\u2013present",
+    link: "https://en.wikipedia.org/wiki/Juno_Reactor",
+    chapter: "chapter-3",
+  },
+  {
+    name: "Steve D\u2019Souza",
+    role: "Venue Pioneer",
+    contribution: "Founded Hilltop in Vagator in the early 1970s. Over 50 years later, Hilltop remains one of Goa\u2019s last original cultural venues, hosting its 15th festival edition in 2026.",
+    era: "pioneers",
+    years: "1973\u2013present",
+    link: "https://www.hilltopgoa.com",
+    chapter: "chapter-1",
+  },
+  {
+    name: "Infected Mushroom",
+    role: "Producers & Live Act",
+    contribution: "Israeli duo (Erez Eisen & Amit Duvdevani) who brought psytrance to mainstream EDM festivals including Tomorrowland and Ultra.",
+    era: "global",
+    years: "1996\u2013present",
+    link: "https://en.wikipedia.org/wiki/Infected_Mushroom",
+    chapter: "chapter-4",
+  },
+  {
+    name: "Astrix",
+    role: "Producer & DJ",
+    contribution: "Israeli artist Avi Shmailov whose tracks like \u201CDeep Jungle Walk\u201D bridged psytrance and mainstream electronic music, gaining widespread recognition on streaming platforms.",
+    era: "global",
+    years: "1997\u2013present",
+    link: "https://en.wikipedia.org/wiki/Astrix",
+    chapter: "chapter-4",
+  },
+  {
+    name: "Vini Vici",
+    role: "Producers & DJs",
+    contribution: "Israeli duo (Aviram Saharai & Matan Kadosh) who brought psytrance to mainstream festival stages, with \u201CGreat Spirit\u201D reaching global chart success.",
+    era: "global",
+    years: "2013\u2013present",
+    link: "https://en.wikipedia.org/wiki/Vini_Vici",
+    chapter: "chapter-4",
+  },
+  {
+    name: "Shpongle",
+    role: "Producers & Live Act",
+    contribution: "Simon Posford and Raja Ram\u2019s psychedelic project fusing Goa trance with world music, creating a genre-defining sound that has built a devoted global following.",
+    era: "architects",
+    years: "1998\u2013present",
+    link: "https://en.wikipedia.org/wiki/Shpongle",
+    chapter: "chapter-3",
   },
 ];
 

@@ -13,7 +13,7 @@ A museum/heritage-style website documenting Goa's trance heritage as a cultural 
 
 ## Pages
 1. `/` — Home: Timeline documentary with hero, 8 chapters, charts, globe visualization
-2. `/culture` — Culture & Heritage: Sanatan Dharma connections (Nada Brahma parallels, East-West fusion timeline, 7 living tradition tabs including Flow States & Art/Craft, scientific evidence section with 8 peer-reviewed citations, testimonial carousel, India's cultural exports with animated counters)
+2. `/culture` — Culture & Heritage: Sanatan Dharma connections (Nada Brahma parallels, East-West fusion timeline, 7 living tradition tabs including Flow States & Art/Craft, scientific evidence section with 8 peer-reviewed citations, era-tabbed Notable Figures section with 15 key people and external links, India's cultural exports with animated counters)
 3. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
 4. `/case` — Preservation plan with 5 pillars
 5. `/media` — Press kit, social templates, downloadable assets
