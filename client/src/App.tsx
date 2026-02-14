@@ -11,6 +11,7 @@ import Evidence from "@/pages/evidence";
 import CasePage from "@/pages/case";
 import MediaPage from "@/pages/media";
 import CulturePage from "@/pages/culture";
+import ExperiencePage from "@/pages/experience";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       >
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/experience" component={ExperiencePage} />
           <Route path="/culture" component={CulturePage} />
           <Route path="/evidence" component={Evidence} />
           <Route path="/case" component={CasePage} />
