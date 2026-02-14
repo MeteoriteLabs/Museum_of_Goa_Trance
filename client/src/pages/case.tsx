@@ -1,29 +1,52 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
-import { PETITION_LINK, ASK_PILLARS } from "@/lib/constants";
+import { ExternalLink, ArrowRight, DollarSign, Music, Globe, Shield, Users } from "lucide-react";
+import { Link } from "wouter";
+import { PETITION_LINK, ASK_PILLARS, QUICK_FACTS } from "@/lib/constants";
 import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 
 export default function CasePage() {
   return (
-    <div className="min-h-screen pt-20">
-      <div className="max-w-4xl mx-auto px-4">
-        <ScrollReveal>
-          <div className="py-12 sm:py-16">
-            <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
-              The Case
-            </span>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mt-4" data-testid="text-case-title">
-              A Preservation Plan for Goa's Heritage
-            </h1>
-            <p className="text-muted-foreground mt-3 max-w-2xl leading-relaxed">
-              A structured, responsible approach to cultural preservation that balances heritage value with community wellbeing and sustainable development.
-            </p>
-          </div>
-        </ScrollReveal>
+    <div className="min-h-screen">
+      <section className="relative min-h-[40vh] flex items-end pb-10 px-4" data-testid="case-hero">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="/images/hero.png"
+            alt="Goa coastline"
+            className="w-full h-full object-cover"
+            data-testid="img-case-hero"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
+          <span className="text-xs font-medium text-white/70 bg-white/10 backdrop-blur-sm px-2.5 py-1 rounded-md" data-testid="text-case-badge">
+            The Case for Preservation
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white" data-testid="text-case-title">
+            Why Goa's Trance Heritage Must Be Protected
+          </h1>
+          <p className="text-white/70 mt-3 max-w-2xl leading-relaxed text-base sm:text-lg" data-testid="text-case-description">
+            A structured, responsible initiative to preserve one of the most significant cultural exports in modern music history — before it's too late.
+          </p>
+        </div>
+      </section>
 
-        <section className="pb-16">
+      <div className="max-w-4xl mx-auto px-4">
+        <section className="py-12 sm:py-16" data-testid="quick-facts-section">
+          <ScrollReveal>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {QUICK_FACTS.map((fact, i) => (
+                <div key={i} className="text-center p-4 rounded-md bg-muted/50" data-testid={`stat-card-${i}`}>
+                  <p className="text-xl sm:text-2xl font-bold text-primary" data-testid={`text-stat-value-${i}`}>{fact.stat}</p>
+                  <p className="text-xs text-muted-foreground mt-1 leading-snug" data-testid={`text-stat-label-${i}`}>{fact.label}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </section>
+
+        <section className="pb-12 sm:pb-16">
           <ScrollReveal>
             <h2 className="text-xl font-semibold mb-4" data-testid="text-what-preserved">
               What Is Being Preserved
@@ -34,42 +57,120 @@ export default function CasePage() {
           </ScrollReveal>
         </section>
 
-        <section className="pb-16">
+        <section className="pb-12 sm:pb-16">
           <ScrollReveal>
             <h2 className="text-xl font-semibold mb-4" data-testid="text-why-matters">
               Why It Matters
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.05}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Card className="p-5">
-                <h3 className="font-medium text-sm text-primary mb-2">Economic Value</h3>
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                  <DollarSign className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-medium text-sm mb-2" data-testid="text-economic-value">Economic Value</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Tourism contributes approximately 16.43% to Goa's GSDP, supporting an estimated 2.5 lakh livelihoods. Preserving the heritage that attracts high-value international tourists is essential for sustaining premium tourism revenue.
+                  Tourism contributes approximately 16.43% to Goa's GSDP, supporting an estimated 2.5 lakh livelihoods. Preserving the heritage that attracts high-value international tourists sustains premium tourism revenue.
                 </p>
               </Card>
               <Card className="p-5">
-                <h3 className="font-medium text-sm text-primary mb-2">Cultural Identity</h3>
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                  <Music className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-medium text-sm mb-2" data-testid="text-cultural-identity">Cultural Identity</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Goa's trance heritage represents one of the most significant cultural exports in modern music history. Without preservation, this unique cultural identity risks being erased or permanently claimed by other regions.
+                  Goa's trance heritage represents one of the most significant cultural exports in modern music history. Without preservation, this identity risks being erased or permanently claimed by other regions.
+                </p>
+              </Card>
+              <Card className="p-5">
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
+                  <Globe className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-medium text-sm mb-2" data-testid="text-global-precedent">Global Precedent</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Berlin's techno culture — which originated in Detroit — earned Germany's national heritage recognition in March 2024. Goa's trance, born in Goa itself, has an even stronger claim as the original birthplace.
                 </p>
               </Card>
             </div>
           </ScrollReveal>
         </section>
 
-        <section className="pb-16">
+        <section className="pb-12 sm:pb-16">
           <ScrollReveal>
-            <h2 className="text-xl font-semibold mb-4" data-testid="text-preservation-model">
-              The Preservation Model
-            </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mb-6">
-              This initiative advocates for a balanced approach that draws on international best practices. The model is not about unregulated activity — it is about creating a structured framework that protects heritage while respecting community needs.
-            </p>
+            <Card className="p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-5">
+                <div className="text-center p-4 rounded-md bg-muted/50" data-testid="card-detroit-comparison">
+                  <p className="text-xs text-muted-foreground mb-1.5">Origin</p>
+                  <p className="text-lg font-bold" data-testid="text-detroit">Detroit</p>
+                  <p className="text-xs text-muted-foreground mt-1">Birthplace of Techno</p>
+                  <div className="mt-3 w-full h-px bg-border" />
+                  <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                    Cultural capital migrated to Berlin without structured preservation
+                  </p>
+                </div>
+                <div className="text-center p-4 rounded-md bg-primary/5 border border-primary/10" data-testid="card-berlin-comparison">
+                  <p className="text-xs text-muted-foreground mb-1.5">Recognised</p>
+                  <p className="text-lg font-bold" data-testid="text-berlin">Berlin</p>
+                  <p className="text-xs text-muted-foreground mt-1">National ICH — March 2024</p>
+                  <div className="mt-3 w-full h-px bg-border" />
+                  <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                    13-year campaign led to national cultural heritage recognition
+                  </p>
+                </div>
+              </div>
+              <div className="p-3 rounded-md bg-muted/30 text-center">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Goa</strong> faces the same risk as Detroit — without structured preservation, its cultural capital will shift permanently to other regions.
+                </p>
+              </div>
+            </Card>
           </ScrollReveal>
         </section>
 
-        <section className="pb-16">
+        <section className="pb-12 sm:pb-16">
+          <ScrollReveal>
+            <h2 className="text-xl font-semibold mb-3" data-testid="text-preservation-model">
+              The Preservation Model
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mb-6">
+              This initiative advocates for a balanced approach that draws on international best practices. The model is not about unregulated activity — it is about creating a structured framework that protects heritage while respecting community needs and environmental sustainability.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.05}>
+            <Card className="p-6 mb-8">
+              <h3 className="font-semibold text-sm mb-4" data-testid="text-pathway-heading">A Credible Pathway Exists</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                India is a signatory to UNESCO's 2003 Convention for the Safeguarding of the Intangible Cultural Heritage. The pathway to formal recognition follows an established process:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <div className="text-center p-3 rounded-md bg-muted/50" data-testid="pathway-step-1">
+                  <p className="text-xs font-medium text-primary">Step 1</p>
+                  <p className="text-xs text-muted-foreground mt-1">Document & Archive</p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-1.5 leading-snug">Oral histories, music, community records</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-muted/50" data-testid="pathway-step-2">
+                  <p className="text-xs font-medium text-primary">Step 2</p>
+                  <p className="text-xs text-muted-foreground mt-1">Community Consensus</p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-1.5 leading-snug">Stakeholder engagement & support</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-muted/50" data-testid="pathway-step-3">
+                  <p className="text-xs font-medium text-primary">Step 3</p>
+                  <p className="text-xs text-muted-foreground mt-1">National ICH Listing</p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-1.5 leading-snug">State & national recognition</p>
+                </div>
+                <div className="text-center p-3 rounded-md bg-primary/5 border border-primary/10" data-testid="pathway-step-4">
+                  <p className="text-xs font-medium text-primary">Step 4</p>
+                  <p className="text-xs text-muted-foreground mt-1">UNESCO Nomination</p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-1.5 leading-snug">Global Representative List</p>
+                </div>
+              </div>
+            </Card>
+          </ScrollReveal>
+        </section>
+
+        <section className="pb-12 sm:pb-16">
           <ScrollReveal>
             <h2 className="text-xl font-semibold mb-6" data-testid="text-five-pillars">
               Five Pillars of Preservation
@@ -104,43 +205,60 @@ export default function CasePage() {
           </div>
         </section>
 
-        <section className="pb-16">
+        <section className="pb-12 sm:pb-16">
           <ScrollReveal>
-            <h2 className="text-xl font-semibold mb-4" data-testid="text-sustainability">
-              Sustainability & Community Balance
-            </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-              The preservation framework prioritizes environmental sustainability and community balance. All proposed cultural zones would be non-residential, licensed, and managed with clear operational standards. Environmental impact assessments and community consultation processes would be built into every stage of implementation.
-            </p>
-          </ScrollReveal>
-        </section>
-
-        <section className="pb-16">
-          <ScrollReveal>
-            <h2 className="text-xl font-semibold mb-4" data-testid="text-working-group">
-              Working Group Proposal
-            </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-              A formal multi-stakeholder working group is proposed, comprising government officials, community leaders, cultural practitioners, tourism operators, and environmental experts. This group would develop measurable sustainability benchmarks, oversee implementation of cultural zones, and conduct regular reviews to ensure the framework serves all stakeholders.
-            </p>
+            <Card className="p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-4 h-4 text-primary" />
+                    </div>
+                    <h3 className="font-medium text-sm" data-testid="text-sustainability">Sustainability & Community Balance</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    All proposed cultural zones would be non-residential, licensed, and managed with clear operational standards. Environmental impact assessments and community consultation processes would be built into every stage.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Users className="w-4 h-4 text-primary" />
+                    </div>
+                    <h3 className="font-medium text-sm" data-testid="text-working-group">Multi-Stakeholder Working Group</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    A formal working group comprising government officials, community leaders, cultural practitioners, tourism operators, and environmental experts. Measurable sustainability benchmarks and regular review cycles ensure accountability.
+                  </p>
+                </div>
+              </div>
+            </Card>
           </ScrollReveal>
         </section>
 
         <section className="pb-16">
           <ScrollReveal>
             <div className="text-center py-8">
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold mb-3" data-testid="text-support-heading">
                 Support This Initiative
               </h3>
-              <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
+              <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6" data-testid="text-support-description">
                 Add your voice to the movement for responsible cultural preservation.
               </p>
-              <a href={PETITION_LINK} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" data-testid="button-petition-case">
-                  Sign the Petition
-                  <ExternalLink className="ml-1.5 h-4 w-4" />
-                </Button>
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a href={PETITION_LINK} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" data-testid="button-petition-case">
+                    Sign the Petition
+                    <ExternalLink className="ml-1.5 h-4 w-4" />
+                  </Button>
+                </a>
+                <Link href="/evidence">
+                  <Button variant="outline" size="lg" data-testid="link-view-evidence-case">
+                    View Sources & Methodology
+                    <ArrowRight className="ml-1.5 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
         </section>
