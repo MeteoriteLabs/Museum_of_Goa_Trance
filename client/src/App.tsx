@@ -46,7 +46,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {!isImmersive && <Navbar />}
+        <Navbar />
         <Router />
         {!isImmersive && <MobileCTA />}
         <Toaster />
