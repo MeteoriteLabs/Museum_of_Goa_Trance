@@ -1,7 +1,7 @@
 # Protect the Birthplace — Goa's Trance Heritage
 
 ## Overview
-A museum/heritage-style website documenting Goa's trance heritage as a cultural preservation initiative. The site follows a timeline documentary format across 5 pages.
+A museum/heritage-style website documenting Goa's trance heritage as a cultural preservation initiative. The site follows a timeline documentary format across 6 pages.
 
 ## Architecture
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS + Framer Motion
@@ -13,10 +13,11 @@ A museum/heritage-style website documenting Goa's trance heritage as a cultural 
 
 ## Pages
 1. `/` — Home: Timeline documentary with hero, 8 chapters, charts, globe visualization
-2. `/culture` — Culture & Heritage: Sanatan Dharma connections (Nada Brahma parallels, East-West fusion timeline, 7 living tradition tabs including Flow States & Art/Craft, scientific evidence section with 8 peer-reviewed citations, era-tabbed Notable Figures section with 15 key people and external links, India's cultural exports with animated counters)
-3. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
-4. `/case` — Preservation plan with 5 pillars
-5. `/media` — Press kit, social templates, downloadable assets
+2. `/experience` — Experience: Immersive full-screen WebGL fluid animation with mouse/touch interaction, rotating quotes, ambient audio toggle, key stats, and petition CTA
+3. `/culture` — Culture & Heritage: Sanatan Dharma connections (Nada Brahma parallels, East-West fusion timeline, 7 living tradition tabs including Flow States & Art/Craft, scientific evidence section with 8 peer-reviewed citations, era-tabbed Notable Figures section with 15 key people and external links, India's cultural exports with animated counters)
+4. `/evidence` — Data Sources & Methodology: charts gallery, data sources by category, hard data vs modeled estimates, methodology & assumptions, defensibility statement, full bibliography with real source URLs
+5. `/case` — Preservation plan with 5 pillars
+6. `/media` — Press kit, social templates, downloadable assets
 
 ## Key Components
 - `Navbar` — Sticky nav with mobile hamburger, shrink-on-scroll effect
