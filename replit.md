@@ -48,6 +48,7 @@ npm run dev
 - Enriched all chapter narratives with researched historical content (Eight Finger Eddie, Goa Gil, record labels, festivals, regulations)
 - Fixed Berlin techno heritage status throughout — correctly referenced as Germany's National Inventory of Intangible Cultural Heritage (March 2024), not UNESCO's global Representative List
 - Updated Chapter 4 era label from "2010s" to "2000s–10s"
-- Updated Evidence page with comprehensive Data Sources & Methodology from official document
+- Updated Evidence page with comprehensive Data Sources & Methodology — 37 bibliography entries, 6 data source categories (Goa Tourism, Economic Dependence, Global Festivals, Historical & Cultural Origins, Regulatory & Policy Context, Cultural Heritage Precedents), real news source URLs (Herald Goa, Scroll.in, RDX Goa, Music Ally, Travel and Tour World, Gomantak Times), Wikipedia, Discogs, documentary links, and label sites
+- Fixed timeline State Action Plan date from 2022 to March 2024 based on Herald Goa reporting
 - Merged UNESCO/ICH content into Chapter 6 (Detroit to Berlin) — includes Berlin precedent timeline, 4-step pathway for Goa
 - Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora)
