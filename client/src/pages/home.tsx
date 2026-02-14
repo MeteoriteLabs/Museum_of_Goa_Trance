@@ -515,8 +515,6 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-8"]} />
-
           <div className="mt-8">
             <AskAccordion />
           </div>

@@ -59,13 +59,14 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "2012", title: "Goa Hippie Tribe Documentary", description: "Interactive documentary Goa Hippie Tribe (Darius Devas, SBS) reunites original Goa hippies via social media, documenting the living memory of the scene\u2019s founders." },
   ],
   "chapter-5": [
-    { year: "2017", title: "Peak Foreign Arrivals", description: "Goa records approximately 8.9 lakh foreign tourist arrivals, the highest in recent history. This becomes the benchmark against which subsequent decline is measured.", highlight: true },
     { year: "2010s\u201320s", title: "Regulatory Pressure Intensifies", description: "Government crackdowns on unregulated outdoor parties in Goa increase. Police raids, stricter licensing requirements, and noise pollution enforcement disrupt the traditional open-air scene that defined Goa\u2019s cultural identity." },
+    { year: "2017", title: "Peak Foreign Arrivals", description: "Goa records approximately 8.9 lakh foreign tourist arrivals, the highest in recent history. This becomes the benchmark against which subsequent decline is measured.", highlight: true },
     { year: "March 2024", title: "Revised State Action Plan for Noise Pollution", description: "The Goa Government notifies a revised State Action Plan under the Noise Pollution Rules, establishing updated enforcement protocols that further constrain cultural event spaces." },
     { year: "2024", title: "Venue Crackdowns in North Goa", description: "North Goa Police register cases against 11+ establishments including prominent venues. Equipment seizures, penalties, and enforcement actions target the remaining cultural infrastructure.", highlight: true },
     { year: "2024", title: "Charter Flight Decline", description: "Charter flights to Goa drop from 266 (in the previous year) to 189 \u2014 a significant decline in the primary channel for high-value international cultural tourists." },
   ],
   "chapter-6": [
+    { year: "Oct 2023", title: "Passing of Goa Gil", description: "Goa Gil (Gilbert Levey), widely known as the \u201CGodfather of Goa Trance,\u201D passes away at age 72. His death underscores the urgency of preserving the living memory and cultural heritage he helped create.", highlight: true },
     { year: "2025", title: "Sunburn Exits Goa", description: "After nearly two decades, Sunburn Festival relocates to Mumbai due to sound pollution complaints, outstanding payments, and local opposition. India\u2019s largest EDM festival leaving its birthplace signals a turning point.", highlight: true },
     { year: "2025", title: "Foreign Arrivals Continue to Decline", description: "Foreign tourist arrivals drop to approximately 5.17 lakh, down from the 2017 peak of 8.9 lakh. While domestic tourism reaches 1.08 crore, the high-value international cultural segment continues to erode." },
     { year: "2025\u201326", title: "Hilltop Endures as Cultural Anchor", description: "While Sunburn leaves and venues face crackdowns, Hilltop in Vagator continues operating \u2014 hosting its 15th annual festival in February 2026 with international psytrance artists. Founded in the early 1970s, it remains one of the last original cultural venues still active in Goa, representing over 50 years of unbroken heritage." },
@@ -79,10 +80,7 @@ export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
     { year: "Nov 2022", title: "Heritage Application Submitted", description: "Rave The Planet submits an application to recognise Berlin\u2019s techno culture as intangible cultural heritage. The application is revised in May 2023 following feedback from the German UNESCO Commission.", highlight: true },
     { year: "March 2024", title: "Germany\u2019s National ICH Inventory", description: "Berlin\u2019s techno culture is officially inscribed on Germany\u2019s National Inventory of Intangible Cultural Heritage. Dr. Motte (founder of Love Parade) and Rave The Planet lead the recognition after a 13-year campaign originating with Hans Cousto\u2019s 2011 proposal.", highlight: true },
   ],
-  "chapter-8": [
-    { year: "Oct 2023", title: "Passing of Goa Gil", description: "Goa Gil (Gilbert Levey), widely known as the \u201CGodfather of Goa Trance,\u201D passes away at age 72. His death underscores the urgency of preserving the living memory and cultural heritage he helped create.", highlight: true },
-    { year: "2026", title: "This Petition", description: "A formal call for recognition, documentation, balanced policy, designated cultural zones, and sustainability standards. The petition represents a structured, responsible path toward preserving Goa\u2019s trance heritage as a globally significant cultural legacy.", highlight: true },
-  ],
+  "chapter-8": [],
 };
 
 export const QUICK_FACTS = [
