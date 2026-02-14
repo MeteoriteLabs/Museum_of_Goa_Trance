@@ -52,6 +52,7 @@ npm run dev
 - Fixed Berlin techno heritage status throughout — correctly referenced as Germany's National Inventory of Intangible Cultural Heritage (March 2024), not UNESCO's global Representative List
 - Updated Chapter 4 era label from "2010s" to "2000s–10s"
 - Updated Evidence page with comprehensive Data Sources & Methodology — 37 bibliography entries, 6 data source categories (Goa Tourism, Economic Dependence, Global Festivals, Historical & Cultural Origins, Regulatory & Policy Context, Cultural Heritage Precedents), real news source URLs (Herald Goa, Scroll.in, RDX Goa, Music Ally, Travel and Tour World, Gomantak Times), Wikipedia, Discogs, documentary links, and label sites
+- Expanded Notable Figures from 15 to 21 people: added Charanjit Singh (Indian electronic pioneer, 1982), Tsuyoshi Suzuki (Matsuri Productions), Man With No Name (Martin Freeland), Mark Allen (Return to the Source), Transwave (French duo), Electric Universe (German duo)
 - Fixed timeline State Action Plan date from 2022 to March 2024 based on Herald Goa reporting
 - Merged UNESCO/ICH content into Chapter 7 (Detroit to Berlin, formerly Ch6) — includes Berlin precedent timeline, 4-step pathway for Goa
 - Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora)
