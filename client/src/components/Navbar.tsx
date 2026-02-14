@@ -44,7 +44,7 @@ export default function Navbar() {
             className={`${scrolled ? "h-6 w-6" : "h-8 w-8"} transition-all duration-300 rounded-full object-cover`}
           />
           <span className="font-semibold text-sm hidden sm:inline">
-            Protect the Birthplace
+            Museum of Goa Trance
           </span>
         </Link>
 
