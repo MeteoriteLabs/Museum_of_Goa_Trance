@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy, Download, Mail, ExternalLink } from "lucide-react";
 import { SiInstagram, SiX, SiWhatsapp } from "react-icons/si";
+import logoImg from "@assets/IMG-20260215-WA0000_1771098793262.jpg";
 import {
   PRESS_SUMMARY,
   KEY_FACTS_BULLETS,
@@ -103,7 +104,7 @@ export default function MediaPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { name: "Hero Image", file: "/images/hero.png" },
-                { name: "Logo", file: "/images/logo.png" },
+                { name: "Logo", file: logoImg },
                 { name: "Tourism Chart", file: "/charts/graph1.png" },
                 { name: "Foreign Arrivals Chart", file: "/charts/graph2.png" },
                 { name: "Charter Flights Chart", file: "/charts/graph3.png" },

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { NAV_LINKS, NAV_MORE_LINKS, PETITION_LINK } from "@/lib/constants";
 import { Menu, X, ExternalLink, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@assets/IMG-20260215-WA0000_1771098793262.jpg";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -39,9 +40,9 @@ export default function Navbar() {
       <div className={`max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 ${scrolled ? "py-1.5" : "py-3"} transition-all duration-300`}>
         <Link href="/" className="flex items-center gap-2" data-testid="link-home-logo">
           <img
-            src="/images/logo.png"
-            alt="Protect the Birthplace"
-            className={`${scrolled ? "h-6 w-6" : "h-8 w-8"} transition-all duration-300 rounded-full object-cover`}
+            src={logoImg}
+            alt="Museum of Goa Trance"
+            className={`${scrolled ? "h-7 w-7" : "h-9 w-9"} transition-all duration-300 rounded-full object-cover`}
           />
           <span className="font-semibold text-sm hidden sm:inline">
             Museum of Goa Trance
