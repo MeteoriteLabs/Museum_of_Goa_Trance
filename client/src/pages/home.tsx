@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ExternalLink, ChevronDown, ArrowRight } from "lucide-react";
-import { PETITION_LINK, TIMELINE_ERAS } from "@/lib/constants";
+import { PETITION_LINK, TIMELINE_ERAS, CHAPTER_MILESTONES } from "@/lib/constants";
 import TimelineDots from "@/components/TimelineDots";
 import TimelineRail from "@/components/TimelineRail";
 import MobileProgress from "@/components/MobileProgress";
 import AskAccordion from "@/components/AskAccordion";
 import Globe from "@/components/Globe";
+import SubTimeline from "@/components/SubTimeline";
 import {
   TranceRiseChart,
   ForeignArrivalsChart,
@@ -173,7 +174,7 @@ export default function Home() {
               Emergence
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              In the 1960s and 70s, Goa became a meeting point for global travellers and experimental music gatherings. The region's unique blend of natural beauty, cultural openness, and creative energy attracted artists, musicians, and thinkers from around the world, planting the seeds of what would become one of the most influential musical movements in modern history.
+              In the 1960s and 70s, Goa became a meeting point for global travellers and experimental music gatherings. Pioneers like Eight Finger Eddie and Goa Gil planted the seeds of what would become one of the most influential musical movements in modern history — from campfire jam sessions to the first electronic sounds on the beach.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: This era established Goa as the birthplace of a globally significant cultural phenomenon.
@@ -196,6 +197,7 @@ export default function Home() {
               </div>
             </Card>
           </ScrollReveal>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-1"]} />
         </section>
 
         <section id="chapter-2" className="py-16 sm:py-20 scroll-mt-24">
@@ -210,7 +212,7 @@ export default function Home() {
               The Goa Sound
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              The distinct Goa trance sound took shape during the 1980s, blending global electronic tools with local rhythmic traditions and a deep spiritual philosophy. Pioneering artists crafted a sonic identity that was unmistakably rooted in Goa — a sound that would eventually captivate audiences worldwide.
+              The 1980s saw a pivotal transformation. Goa Gil, DJ Laurent, and Fred Disko switched from rock to electronic music, introducing EBM, acid house, and industrial sounds. Goa Gil framed the all-night DJ set as spiritual practice — "trance dance as active meditation" — and established venues like the Music House in Vagator.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: A unique cultural art form was born — one that would go on to define an entire genre.
@@ -229,12 +231,13 @@ export default function Home() {
                 <div>
                   <h4 className="font-medium text-sm">A Cultural Art Form</h4>
                   <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                    The Goa sound represented more than music — it was a cultural expression combining technology, tradition, and communal gathering into something entirely new.
+                    The Goa sound represented more than music — it was a cultural expression combining technology, tradition, and communal gathering into something entirely new. DJs created custom mixes by looping melodies, removing vocals, and extending tracks into hypnotic journeys.
                   </p>
                 </div>
               </div>
             </Card>
           </ScrollReveal>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-2"]} />
         </section>
 
         <section id="chapter-3" className="py-16 sm:py-20 scroll-mt-24">
@@ -249,10 +252,10 @@ export default function Home() {
               Global Diaspora
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              Travellers carried the Goa sound worldwide. Festivals inspired by the Goa experience began appearing across Europe, South America, Asia, and Australia. What started on the beaches of Goa had become a truly global cultural phenomenon.
+              The 1990s transformed Goa trance from a local phenomenon into a global movement. Dedicated labels like Dragonfly and TIP Records gave the sound a commercial platform. Paul Oakenfold's 1994 BBC Radio 1 "Goa Mix" brought it to millions. By 1997, Boom Festival launched in Portugal — directly inspired by Goa's beaches — and the genre had reached its zenith before evolving into psytrance.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
-              Why it matters: Goa's cultural export created thriving ecosystems across continents.
+              Why it matters: Goa's cultural export created thriving ecosystems across continents, spawning labels, festivals, and an entire genre.
             </p>
           </ScrollReveal>
           <div className="mt-6">
@@ -261,6 +264,7 @@ export default function Home() {
           <div className="mt-6">
             <TranceRiseChart />
           </div>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-3"]} />
         </section>
 
         <section id="chapter-4" className="py-16 sm:py-20 scroll-mt-24">
@@ -269,13 +273,13 @@ export default function Home() {
               <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
                 Chapter 4
               </span>
-              <span className="text-xs text-muted-foreground">2010s</span>
+              <span className="text-xs text-muted-foreground">2000s–10s</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-chapter-4-title">
               Global Value Creation
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              Global festival ecosystems inspired by Goa's heritage began creating major tourism revenue across multiple countries. The cultural capital originating from Goa fuelled economies far from its shores.
+              The 2000s and 2010s saw the Goa-origin festival ecosystem mature into a global industry. Sunburn Festival launched in Goa in 2007 and became Asia's largest EDM festival. Boom Festival in Portugal grew to 40,000+ attendees from 150+ countries. Artists like Vini Vici and Astrix brought psytrance to mainstream festivals worldwide.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
               Why it matters: While value was created globally, the birthplace must preserve its legacy.
@@ -309,6 +313,7 @@ export default function Home() {
               </Link>
             </div>
           </ScrollReveal>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-4"]} />
         </section>
 
         <section id="chapter-5" className="py-16 sm:py-20 scroll-mt-24">
@@ -323,10 +328,10 @@ export default function Home() {
               Tourism Shift & Risk
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              While total tourism to Goa remains substantial, critical high-value segments have declined. Foreign arrivals and chartered flights — indicators of Goa's global cultural appeal — show a significant downward trend.
+              While total tourism to Goa remains substantial, critical high-value segments have declined sharply. Foreign arrivals dropped from 8.9 lakh (2017) to 5.17 lakh (2025). Regulatory crackdowns on cultural venues, noise pollution enforcement, and Sunburn Festival's exit from Goa signal a cultural ecosystem under pressure.
             </p>
             <p className="mt-2 text-sm text-primary/80 font-medium">
-              Why it matters: Domestic tourism remains strong, but preserving global identity sustains premium value.
+              Why it matters: Domestic tourism remains strong, but preserving global identity sustains premium value and livelihoods.
             </p>
           </ScrollReveal>
           <div className="mt-6">
@@ -335,6 +340,7 @@ export default function Home() {
           <div className="mt-4">
             <TourismGrowthChart />
           </div>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-5"]} />
         </section>
 
         <section id="chapter-6" className="py-16 sm:py-20 scroll-mt-24">
@@ -349,7 +355,7 @@ export default function Home() {
               Detroit to Berlin — A Cautionary Parallel
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              History offers a clear precedent. Detroit originated techno — but it was Berlin that built the supported ecosystem, gaining global recognition. In 2024, UNESCO inscribed Berlin's techno culture on its Representative List of the Intangible Cultural Heritage of Humanity — a landmark decision validating that electronic music communities carry genuine cultural significance worthy of formal protection.
+              History offers a clear precedent. Detroit originated techno in the 1980s — but it was Berlin that built the supported ecosystem after the Wall fell in 1989. In March 2024, Germany's UNESCO Commission officially inscribed "Techno Culture in Berlin" on its National Inventory of Intangible Cultural Heritage — the culmination of a 13-year campaign led by Rave The Planet and Dr. Motte, founder of the Love Parade.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
@@ -367,10 +373,10 @@ export default function Home() {
                 <div className="text-center p-4 rounded-md bg-primary/5 border border-primary/10">
                   <p className="text-xs text-muted-foreground mb-1.5">Supported Ecosystem</p>
                   <p className="text-lg font-bold">Berlin</p>
-                  <p className="text-xs text-muted-foreground mt-1">UNESCO ICH — 2024</p>
+                  <p className="text-xs text-muted-foreground mt-1">National ICH — March 2024</p>
                   <div className="mt-3 w-full h-px bg-border" />
                   <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                    Structured framework preserved heritage and earned UNESCO recognition
+                    Structured framework preserved heritage and earned national cultural recognition
                   </p>
                 </div>
               </div>
@@ -393,9 +399,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">UNESCO ICH Inscription — 2024</p>
+                    <p className="text-sm font-medium">National ICH Inventory — March 2024</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                      Berlin's techno scene was officially inscribed on UNESCO's Representative List, recognising its role in shaping social cohesion, creative expression, and urban identity.
+                      Berlin's techno culture was officially inscribed on Germany's National Inventory of Intangible Cultural Heritage, recognising its role in shaping social cohesion, creative expression, and urban identity. It became the 150th entry in Germany's national inventory.
                     </p>
                   </div>
                 </div>
@@ -407,9 +413,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">National ICH Inventory — 2022</p>
+                    <p className="text-sm font-medium">Application Process — 2022–2023</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                      Germany first added Berlin techno to its national Intangible Cultural Heritage inventory in 2022, paving the way for the UNESCO nomination.
+                      Rave The Planet submitted the formal application in November 2022 and revised it in May 2023, building on over a decade of documentation and community engagement since Hans Cousto's original 2011 proposal.
                     </p>
                   </div>
                 </div>
@@ -421,9 +427,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Structured Community Involvement</p>
+                    <p className="text-sm font-medium">13-Year Community Campaign</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                      The nomination was driven by Rave The Planet, a community-led initiative that documented Berlin's techno heritage, organised stakeholder engagement, and built institutional support over several years.
+                      The recognition was driven by Rave The Planet (led by Dr. Motte and Ellen Dosch-Roeingh), who submitted their application in November 2022 and revised it in May 2023. The campaign originated with Hans Cousto's proposal in 2011 and took over a decade of documentation and stakeholder engagement.
                     </p>
                   </div>
                 </div>
@@ -456,7 +462,7 @@ export default function Home() {
               </div>
               <div className="mt-4 p-3 rounded-md bg-muted/30 text-center">
                 <p className="text-sm text-muted-foreground">
-                  If Berlin's techno — which originated in <strong className="text-foreground">Detroit</strong> — earned UNESCO recognition, Goa's trance heritage — born <strong className="text-foreground">in Goa itself</strong> — has an even stronger claim as the original birthplace.
+                  If Berlin's techno — which originated in <strong className="text-foreground">Detroit</strong> — earned national cultural heritage recognition, Goa's trance heritage — born <strong className="text-foreground">in Goa itself</strong> — has an even stronger claim as the original birthplace.
                 </p>
               </div>
             </Card>
@@ -469,6 +475,7 @@ export default function Home() {
               </Button>
             </Link>
           </ScrollReveal>
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-6"]} />
         </section>
 
         <section id="chapter-7" className="py-16 sm:py-20 scroll-mt-24">
@@ -483,9 +490,11 @@ export default function Home() {
               A Responsible Path Forward
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              This initiative is not about unregulated activity. It is about structured, responsible cultural preservation that balances heritage value with community wellbeing and environmental sustainability.
+              With the passing of Goa Gil in October 2023, one of the founding figures of this movement is gone. The living memory of this heritage is fading. This initiative is not about unregulated activity — it is about structured, responsible cultural preservation that balances heritage value with community wellbeing and environmental sustainability, before it is too late.
             </p>
           </ScrollReveal>
+
+          <SubTimeline milestones={CHAPTER_MILESTONES["chapter-7"]} />
 
           <div className="mt-8">
             <AskAccordion />

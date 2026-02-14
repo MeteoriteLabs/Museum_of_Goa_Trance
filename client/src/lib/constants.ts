@@ -7,11 +7,76 @@ export const TIMELINE_ERAS = [
   { label: "1960s\u201370s", id: "chapter-1" },
   { label: "1980s", id: "chapter-2" },
   { label: "1990s\u20132000s", id: "chapter-3" },
-  { label: "2010s", id: "chapter-4" },
+  { label: "2000s\u201310s", id: "chapter-4" },
   { label: "2017\u20132025", id: "chapter-5" },
   { label: "Precedent", id: "chapter-6" },
   { label: "The Ask", id: "chapter-7" },
 ];
+
+export interface SubMilestone {
+  year: string;
+  title: string;
+  description: string;
+  highlight?: boolean;
+}
+
+export const CHAPTER_MILESTONES: Record<string, SubMilestone[]> = {
+  "chapter-1": [
+    { year: "Mid-1960s", title: "Eight Finger Eddie Discovers Anjuna", description: "Yertward Mazamanian, an American hippie of Armenian descent, arrives at Anjuna Beach and establishes the first communal gathering point. His house in South Anjuna becomes the focal point for incoming travelers and musicians." },
+    { year: "Late 1960s", title: "Goa Joins the Hippie Trail", description: "Goa becomes a key destination on the overland Hippie Trail from Europe through Turkey, Iran, and Afghanistan to South Asia. Travelers are drawn by the beaches, low cost of living, and spiritual openness." },
+    { year: "1969", title: "Goa Gil Arrives in Goa", description: "Gilbert Levey, later known as Goa Gil, arrives at age 18 after traveling from San Francisco via the Hippie Trail. He stays at Eight Finger Eddie\u2019s house before embarking on a spiritual journey across India, eventually becoming a Sadhu.", highlight: true },
+    { year: "Early 1970s", title: "Full Moon Parties Begin", description: "Informal full moon gatherings emerge on Goa\u2019s beaches, blending Western psychedelic rock with Eastern spirituality. Artists and musicians from around the world converge for campfire sessions featuring Pink Floyd, Grateful Dead, and Led Zeppelin." },
+    { year: "1975", title: "Anjuna Flea Market Founded", description: "Eight Finger Eddie starts the Anjuna Flea Market as a barter platform for traveling hippies. It becomes a cultural hub connecting travelers, locals, and artisans \u2014 and still operates today.", highlight: true },
+    { year: "1979", title: "First Electronic Music in Goa", description: "Kraftwerk tracks are played for the first time on Goa\u2019s beaches by visiting DJs, marking the earliest shift from acoustic rock to electronic sounds. This pivotal moment planted the seed for the genre that would follow.", highlight: true },
+  ],
+  "chapter-2": [
+    { year: "1983", title: "The Electronic Switch", description: "Goa Gil, DJ Laurent, and Fred Disko transition from psychedelic rock to electronic music, introducing EBM (Electronic Body Music), acid house, and industrial sounds to the beach party circuit.", highlight: true },
+    { year: "Mid-1980s", title: "Trance Dance as Active Meditation", description: "Goa Gil develops the philosophy of \u201Ctrance dance as active meditation,\u201D framing all-night DJ sets as spiritual journeys from darkness to light. Music becomes more than entertainment \u2014 it becomes ritual." },
+    { year: "Mid-1980s", title: "Custom Mix Culture Emerges", description: "DJs begin creating unique sets by looping melodies, removing vocals, and extending tracks. Artists like Front 242 and Nitzer Ebb influence the evolving sound alongside emerging acid house from Europe." },
+    { year: "Late 1980s", title: "Party Circuit Established", description: "Regular party venues emerge across North Goa \u2014 Bamboo Forest (Anjuna), Disco Valley (Vagator), and beaches in Arambol. The Goa party circuit becomes a seasonal institution attracting international travelers." },
+    { year: "Late 1980s", title: "Goa Gil\u2019s Music House", description: "Goa Gil founds the Music House in Vagator, a rehearsal and party hub hosting up to 20 musicians. Bands like the Anjuna Jam Band form here, bridging the rock era with the electronic future." },
+  ],
+  "chapter-3": [
+    { year: "1990", title: "First Goa-Style Party Outside India", description: "On December 16, the first Goa-style party is held in London. This event later gives rise to TIP Records and marks the beginning of Goa trance\u2019s international spread.", highlight: true },
+    { year: "1992", title: "Goa Trance Gains Its Own Identity", description: "The scene establishes an independent musical identity. Parties at Bamboo Forest, Disco Valley, and across Anjuna attract global attention. The genre begins to crystallise as something distinct from techno or house." },
+    { year: "1993", title: "First Dedicated Labels Founded", description: "Dragonfly Records is established by Youth (Martin Glover of Killing Joke) at Butterfly Studios in Brixton, London \u2014 the first label dedicated to the Goa trance sound. The first Goa trance album, Project II Trance, is released.", highlight: true },
+    { year: "1994", title: "Global Mainstream Recognition", description: "Paul Oakenfold\u2019s BBC Radio 1 \u201CGoa Mix\u201D (Essential Mix) brings the genre to millions. TIP Records is officially founded by Raja Ram. The term \u201CGoa trance\u201D becomes widely used. The golden age begins.", highlight: true },
+    { year: "1995", title: "Documentaries Air Worldwide", description: "Channel 4 broadcasts the documentary Goa Trance, featuring TIP Records pioneers and Hallucinogen. A second documentary, Psychedelic Trance: Music Is My Drug, traces the genre\u2019s spread to Israel, the UK, and Japan." },
+    { year: "1996\u201397", title: "Commercial Peak of Goa Trance", description: "The genre reaches its zenith with artists like Astral Projection, Juno Reactor, Hallucinogen, and Man With No Name. Key labels \u2014 TIP, Dragonfly, Flying Rhino, Transient, Matsuri \u2014 release landmark albums. Tempo ranges from 130\u2013150 BPM." },
+    { year: "1997", title: "Boom Festival Launches in Portugal", description: "The first edition of Boom Festival is held at Herdade do Zambujal, Aguas de Moura, directly inspired by Goa\u2019s beach parties. It would grow into one of the world\u2019s largest transformational festivals, attracting 40,000+ attendees from 150+ countries.", highlight: true },
+    { year: "1997\u201398", title: "Genre Evolves into Psytrance", description: "Matsuri Productions declares the \u201Ccommercial death\u201D of Goa trance. The sound evolves into psychedelic trance (psytrance) \u2014 faster tempos, more complex rhythms, and digital production tools. The cultural DNA of Goa remains at its core." },
+    { year: "2000", title: "India\u2019s Noise Pollution Rules Enacted", description: "The Noise Pollution (Regulation and Control) Rules are enacted under the Environment Protection Act, establishing a 10 PM cutoff for amplified music. This begins the regulatory pressure on Goa\u2019s open-air party culture." },
+  ],
+  "chapter-4": [
+    { year: "2003", title: "Neo-Goa Revival Movement", description: "The Neo-Goa (New School Goa) movement begins with Tranceform Records in Finland releasing the first Neo-Goa album, Anima Mundi by Ethereal. Artists return to the melodic aesthetics of classic Goa trance with modern production." },
+    { year: "2007", title: "Sunburn Festival Launches in Goa", description: "India\u2019s first commercial EDM festival debuts at Candolim Beach with headliners Carl Cox, Above & Beyond, and Axwell. Sunburn becomes Asia\u2019s largest electronic music festival and a defining element of Goa\u2019s modern music identity.", highlight: true },
+    { year: "2009", title: "CNN Top 10 Festival Recognition", description: "CNN ranks Sunburn Festival among the Top 10 festivals in the world, reinforcing Goa\u2019s position as a globally recognised music destination." },
+    { year: "2010s", title: "Global Festival Ecosystem Matures", description: "Boom Festival (Portugal) grows to 40,000+ attendees from 150+ countries. Ozora Festival (Hungary) draws ~30,000. Over 35 major psytrance festivals operate globally, all tracing cultural lineage to Goa." },
+    { year: "2010s", title: "Psytrance Enters Mainstream EDM", description: "Artists like Vini Vici, Astrix, and Infected Mushroom bring psytrance to mainstream festivals including Tomorrowland, Ultra, and EDC. The Goa-origin sound reaches audiences who may never have heard the term \u201CGoa trance.\u201D" },
+    { year: "2012", title: "Goa Hippie Tribe Documentary", description: "Interactive documentary Goa Hippie Tribe (Darius Devas, SBS) reunites original Goa hippies via social media, documenting the living memory of the scene\u2019s founders." },
+  ],
+  "chapter-5": [
+    { year: "2017", title: "Peak Foreign Arrivals", description: "Goa records approximately 8.9 lakh foreign tourist arrivals, the highest in recent history. This becomes the benchmark against which subsequent decline is measured.", highlight: true },
+    { year: "2010s\u201320s", title: "Regulatory Pressure Intensifies", description: "Government crackdowns on unregulated outdoor parties in Goa increase. Police raids, stricter licensing requirements, and noise pollution enforcement disrupt the traditional open-air scene that defined Goa\u2019s cultural identity." },
+    { year: "2022", title: "State Action Plan for Noise Pollution", description: "The Goa Government formally notifies a State Action Plan under the Noise Pollution Rules, establishing structured enforcement protocols that further constrain cultural event spaces." },
+    { year: "2024", title: "Venue Crackdowns in North Goa", description: "North Goa Police register cases against 11+ establishments including prominent venues. Equipment seizures, penalties, and enforcement actions target the remaining cultural infrastructure.", highlight: true },
+    { year: "2024", title: "Charter Flight Decline", description: "Charter flights to Goa drop from 266 (in the previous year) to 189 \u2014 a significant decline in the primary channel for high-value international cultural tourists." },
+    { year: "2025", title: "Sunburn Exits Goa", description: "After nearly two decades, Sunburn Festival relocates to Mumbai due to sound pollution complaints, outstanding payments, and local opposition. India\u2019s largest EDM festival leaving its birthplace signals a turning point.", highlight: true },
+    { year: "2025", title: "Foreign Arrivals Continue to Decline", description: "Foreign tourist arrivals drop to approximately 5.17 lakh, down from the 2017 peak of 8.9 lakh. While domestic tourism reaches 1.08 crore, the high-value international cultural segment continues to erode." },
+  ],
+  "chapter-6": [
+    { year: "1980s", title: "Techno Originates in Detroit", description: "The techno genre emerges in Detroit, USA through pioneers like Juan Atkins, Derrick May, and Kevin Saunderson. However, lack of structured support and declining infrastructure would later cause its cultural centre to shift." },
+    { year: "1989", title: "Berlin Wall Falls", description: "The fall of the Berlin Wall opens abandoned East Berlin industrial spaces. Young people occupy warehouses and factories for raves, giving techno a new home and cultural context." },
+    { year: "1991", title: "Tresor Club Opens in Berlin", description: "Tresor, one of the world\u2019s most iconic techno clubs, opens in a former department store vault in East Berlin. It becomes a symbol of Berlin\u2019s emerging techno identity." },
+    { year: "2011", title: "Heritage Campaign Begins", description: "Hans Cousto proposes the idea of recognising Berlin\u2019s techno culture as intangible cultural heritage. The campaign would take over a decade to succeed." },
+    { year: "Nov 2022", title: "Heritage Application Submitted", description: "Rave The Planet submits an application to recognise Berlin\u2019s techno culture as intangible cultural heritage. The application is revised in May 2023 following feedback from the German UNESCO Commission.", highlight: true },
+    { year: "March 2024", title: "Germany\u2019s National ICH Inventory", description: "Berlin\u2019s techno culture is officially inscribed on Germany\u2019s National Inventory of Intangible Cultural Heritage. Dr. Motte (founder of Love Parade) and Rave The Planet lead the recognition after a 13-year campaign originating with Hans Cousto\u2019s 2011 proposal.", highlight: true },
+  ],
+  "chapter-7": [
+    { year: "Oct 2023", title: "Passing of Goa Gil", description: "Goa Gil (Gilbert Levey), widely known as the \u201CGodfather of Goa Trance,\u201D passes away at age 72. His death underscores the urgency of preserving the living memory and cultural heritage he helped create.", highlight: true },
+    { year: "2026", title: "This Petition", description: "A formal call for recognition, documentation, balanced policy, designated cultural zones, and sustainability standards. The petition represents a structured, responsible path toward preserving Goa\u2019s trance heritage as a globally significant cultural legacy.", highlight: true },
+  ],
+};
 
 export const QUICK_FACTS = [
   { stat: "~16.43%", label: "Tourism contribution to Goa GSDP" },
