@@ -132,6 +132,14 @@ export default function Evidence() {
                     "Tourism employment data (~2.5 lakh jobs, ~40% workforce)",
                     "Tourism GSDP contribution (~16.43%)",
                     "Boom Festival municipal economic impact report",
+                    "Berlin techno \u2014 Germany\u2019s National ICH Inventory (March 2024, berlin.de)",
+                    "Noise Pollution Rules, 2000 (Environment Protection Act)",
+                    "Goa Gil, Eight Finger Eddie \u2014 biographical records (Wikipedia)",
+                    "Dragonfly, TIP, Matsuri, Flying Rhino \u2014 founding dates (Wikipedia, Discogs)",
+                    "Boom Festival, Sunburn Festival \u2014 launch dates & attendance (Wikipedia)",
+                    "Channel 4 documentary (1995), Goa Hippie Tribe documentary (2012)",
+                    "North Goa venue crackdowns 2024 (RDX Goa, Herald Goa, Scroll.in)",
+                    "Sunburn relocation to Mumbai 2025 (Music Ally, Travel and Tour World)",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
@@ -152,6 +160,7 @@ export default function Evidence() {
                     "Lifetime cumulative global impact estimates",
                     "Annualized Boom Festival contribution",
                     "Tourism multiplier projections (1.5x\u20132.5x)",
+                    "Sunburn Festival: \u20b930\u201340 crore local contribution per edition",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40 mt-1.5 flex-shrink-0" />
