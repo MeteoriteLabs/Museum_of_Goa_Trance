@@ -1,20 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, PETITION_LINK } from "@/lib/constants";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { NAV_LINKS, NAV_MORE_LINKS, PETITION_LINK } from "@/lib/constants";
+import { Menu, X, ExternalLink, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const allLinks = [...NAV_LINKS, ...NAV_MORE_LINKS];
+  const isMoreActive = NAV_MORE_LINKS.some((l) => location === l.href);
 
   return (
     <nav
@@ -45,6 +60,34 @@ export default function Navbar() {
               </Button>
             </Link>
           ))}
+
+          <div className="relative" ref={moreRef}>
+            <Button
+              variant={isMoreActive ? "secondary" : "ghost"}
+              size="sm"
+              onClick={() => setMoreOpen((v) => !v)}
+              data-testid="button-nav-more"
+              className="gap-1"
+            >
+              More
+              <ChevronDown className={`w-3 h-3 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+            </Button>
+            {moreOpen && (
+              <div className="absolute top-full right-0 mt-1 w-40 bg-background border rounded-md shadow-lg py-1 z-50">
+                {NAV_MORE_LINKS.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <button
+                      className={`w-full text-left px-3 py-2 text-sm hover-elevate ${location === link.href ? "bg-secondary" : ""}`}
+                      onClick={() => setMoreOpen(false)}
+                      data-testid={`link-nav-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                    >
+                      {link.label}
+                    </button>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -77,7 +120,7 @@ export default function Navbar() {
             className="md:hidden border-t bg-background overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-1">
-              {NAV_LINKS.map((link) => (
+              {allLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <Button
                     variant={location === link.href ? "secondary" : "ghost"}

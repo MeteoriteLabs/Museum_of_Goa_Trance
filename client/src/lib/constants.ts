@@ -326,11 +326,14 @@ export const SOCIAL_TEMPLATES = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Experience", href: "/experience" },
-  { label: "Culture", href: "/culture" },
   { label: "The Case", href: "/case" },
   { label: "Evidence", href: "/evidence" },
+  { label: "Culture", href: "/culture" },
+];
+
+export const NAV_MORE_LINKS = [
   { label: "Media", href: "/media" },
+  { label: "Experience", href: "/experience" },
 ];
 
 export interface CultureParallel {
