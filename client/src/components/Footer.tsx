@@ -5,6 +5,7 @@ import { ExternalLink, Mail, Copy, ArrowUpRight } from "lucide-react";
 import { SiInstagram, SiX, SiWhatsapp } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
+import logoImg from "@assets/IMG-20260215-WA0000_1771098793262.jpg";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -38,6 +39,12 @@ export default function Footer() {
         <div className="bg-foreground/[0.03] border-t">
           <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20">
             <div className="text-center max-w-xl mx-auto mb-10">
+              <img
+                src={logoImg}
+                alt="Museum of Goa Trance"
+                className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+                data-testid="img-footer-logo"
+              />
               <p className="text-xs uppercase tracking-[0.2em] text-foreground/70 font-semibold mb-3" data-testid="text-footer-tagline">
                 A Cultural Preservation Initiative
               </p>
