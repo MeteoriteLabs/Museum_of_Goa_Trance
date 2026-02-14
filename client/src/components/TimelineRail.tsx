@@ -9,21 +9,21 @@ interface TimelineRailProps {
 export default function TimelineRail({ activeIndex }: TimelineRailProps) {
   return (
     <div
-      className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-[80]"
+      className="hidden lg:flex fixed left-2 top-1/2 -translate-y-1/2 z-[80]"
       data-testid="timeline-rail"
     >
       <motion.div
         initial={{ opacity: 0, x: -12 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="relative flex flex-col"
+        className="relative flex flex-col bg-background/80 backdrop-blur-sm rounded-md py-1 px-2"
       >
         <div
-          className="absolute left-[4px] top-[5px] bottom-[5px] w-0.5 bg-muted-foreground/15"
+          className="absolute left-[12px] top-[9px] bottom-[9px] w-0.5 bg-muted-foreground/15"
           aria-hidden="true"
         />
         <div
-          className="absolute left-[4px] top-[5px] w-0.5 bg-primary/50 transition-all duration-300"
+          className="absolute left-[12px] top-[9px] w-0.5 bg-primary/50 transition-all duration-300"
           style={{
             height:
               activeIndex <= 0
