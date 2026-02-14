@@ -43,7 +43,11 @@ npm run dev
 - Subtle Framer Motion animations (fade-up, scroll reveal)
 
 ## Recent Changes
-- Updated Evidence page with comprehensive Data Sources & Methodology from official document — added Data Sources by Category (4 categories with key figures and real source URLs), expanded Hard Data vs Modeled Estimates, detailed Methodology & Assumptions with specific ranges, Defensibility & Purpose section, and full bibliography with 9 verified source links
-- Merged UNESCO/ICH content into Chapter 6 (Detroit to Berlin) — includes Berlin precedent timeline, 4-step UNESCO pathway for Goa
-- Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora) — animated arcs, labels, pulse rings from Goa
-- Removed Quick Facts section from home page
+- Added 40+ factual sub-milestones across all 7 chapters via new SubTimeline component and CHAPTER_MILESTONES data in constants.ts
+- Created SubTimeline component (client/src/components/SubTimeline.tsx) — vertical timeline with dots, years, titles, descriptions
+- Enriched all chapter narratives with researched historical content (Eight Finger Eddie, Goa Gil, record labels, festivals, regulations)
+- Fixed Berlin techno heritage status throughout — correctly referenced as Germany's National Inventory of Intangible Cultural Heritage (March 2024), not UNESCO's global Representative List
+- Updated Chapter 4 era label from "2010s" to "2000s–10s"
+- Updated Evidence page with comprehensive Data Sources & Methodology from official document
+- Merged UNESCO/ICH content into Chapter 6 (Detroit to Berlin) — includes Berlin precedent timeline, 4-step pathway for Goa
+- Replaced canvas-based globe with react-globe.gl in Chapter 3 (Global Diaspora)
