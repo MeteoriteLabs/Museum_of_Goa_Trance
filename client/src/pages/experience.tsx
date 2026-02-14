@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Volume2, VolumeX, Settings, X } from "lucide-react";
+import { Volume2, VolumeX, Settings, X, ExternalLink } from "lucide-react";
+import { PETITION_LINK } from "@/lib/constants";
 
 interface FluidConfig {
   densityDiffusion: number;
@@ -929,7 +930,7 @@ export default function ExperiencePage() {
         data-testid="canvas-fluid"
       />
 
-      <div className="absolute bottom-6 right-6 flex items-center gap-2 z-10">
+      <div className="absolute bottom-16 right-6 flex items-center gap-2 z-10">
         <Button
           size="icon"
           variant="outline"
@@ -956,6 +957,18 @@ export default function ExperiencePage() {
           style={{ bottom: 0 }}
           data-testid="panel-settings"
         >
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-white/70 text-xs font-medium uppercase tracking-wider">Settings</span>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="text-white/60 hover:text-white"
+              onClick={() => setShowSettings(false)}
+              data-testid="button-close-settings"
+            >
+              <X className="w-4 h-4" />
+            </Button>
+          </div>
           <SettingsSlider
             label="Density Diffusion"
             value={config.densityDiffusion}
@@ -1025,6 +1038,25 @@ export default function ExperiencePage() {
           </div>
         </div>
       )}
+
+      <footer className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-3 bg-black/60 backdrop-blur-sm border-t border-white/10" data-testid="footer-experience">
+        <span className="text-white/50 text-xs hidden sm:block">Protect the Birthplace of Goa Trance</span>
+        <a
+          href={PETITION_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto"
+        >
+          <Button
+            variant="outline"
+            className="bg-white/10 border-white/20 text-white text-xs gap-1.5"
+            data-testid="button-sign-petition-footer"
+          >
+            Sign the Petition
+            <ExternalLink className="w-3 h-3" />
+          </Button>
+        </a>
+      </footer>
     </div>
   );
 }
