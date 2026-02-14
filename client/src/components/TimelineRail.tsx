@@ -8,14 +8,16 @@ interface TimelineRailProps {
 
 export default function TimelineRail({ activeIndex }: TimelineRailProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -12 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+    <div
       className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-[80] flex-col items-center gap-0"
       data-testid="timeline-rail"
     >
-      <div className="relative flex flex-col items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="relative flex flex-col items-center"
+      >
         {TIMELINE_ERAS.map((era, i) => (
           <a
             key={era.id}
@@ -53,7 +55,7 @@ export default function TimelineRail({ activeIndex }: TimelineRailProps) {
             </span>
           </a>
         ))}
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
