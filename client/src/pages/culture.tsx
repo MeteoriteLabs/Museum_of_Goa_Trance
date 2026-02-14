@@ -12,6 +12,9 @@ import {
   Palette,
   Users,
   RotateCcw,
+  Brain,
+  Paintbrush,
+  BookOpen,
 } from "lucide-react";
 import {
   PETITION_LINK,
@@ -21,6 +24,7 @@ import {
   CULTURE_TESTIMONIALS,
   INDIAS_CULTURAL_EXPORTS,
   CULTURE_STATS,
+  SCIENCE_EVIDENCE,
 } from "@/lib/constants";
 import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
@@ -31,6 +35,8 @@ const TAB_ICONS: Record<string, typeof Music> = {
   visual: Palette,
   community: Users,
   cycles: RotateCcw,
+  flow: Brain,
+  art: Paintbrush,
 };
 
 function AnimatedCounter({ value, label }: { value: string; label: string }) {
@@ -167,10 +173,10 @@ function TestimonialCarousel() {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`h-2 rounded-full ${
+              className={`w-2 h-2 rounded-full ${
                 i === current
-                  ? "bg-primary w-4"
-                  : "bg-muted-foreground/30 w-2"
+                  ? "bg-primary"
+                  : "bg-muted-foreground/30"
               }`}
               data-testid={`button-testimonial-dot-${i}`}
               aria-label={`Go to testimonial ${i + 1}`}
@@ -428,6 +434,62 @@ export default function CulturePage() {
               </Card>
             </motion.div>
           </AnimatePresence>
+        </section>
+
+        <section className="py-16 sm:py-20" data-testid="section-science">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                The Evidence
+              </span>
+              <h2
+                className="text-2xl sm:text-3xl font-bold tracking-tight mt-4"
+                data-testid="text-science-title"
+              >
+                What the Research Says
+              </h2>
+              <p className="text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
+                Peer-reviewed research from neuroscience, musicology, anthropology, and
+                psychology validates what practitioners have always known — this culture
+                produces measurable effects on mind, body, and community.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-4">
+            {SCIENCE_EVIDENCE.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.04}>
+                <Card className="p-5" data-testid={`card-science-${i}`}>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-primary/10">
+                        <BookOpen className="w-3.5 h-3.5 text-primary" />
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <span className="text-[10px] uppercase tracking-wider text-primary font-semibold">
+                          {item.category}
+                        </span>
+                        <span className="text-[10px] text-muted-foreground">
+                          {item.year}
+                        </span>
+                      </div>
+                      <h4 className="font-medium text-sm" data-testid={`text-science-title-${i}`}>
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                        {item.finding}
+                      </p>
+                      <p className="text-[11px] text-muted-foreground/70 mt-2 italic" data-testid={`text-science-source-${i}`}>
+                        {item.source}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
         </section>
 
         <section className="py-16 sm:py-20" data-testid="section-voices">

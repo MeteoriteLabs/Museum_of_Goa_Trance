@@ -480,6 +480,32 @@ export const LIVING_TRADITION_TABS: LivingTraditionTab[] = [
       "The annual return of the community to Goa each season reflects the cyclical pilgrimage traditions (yatra) embedded in Indian culture",
     ],
   },
+  {
+    id: "flow",
+    title: "Flow States",
+    description: "The trance state sought in Goa\u2019s musical tradition is not escapism \u2014 it is a disciplined journey inward. The Sanskrit concept of Dhyana (deep meditation) describes exactly this: sustained, absorbed focus leading to transcendence. Modern neuroscience now validates what Indian sages understood millennia ago.",
+    points: [
+      "Repetitive rhythmic patterns at 140\u2013150 BPM entrain brainwave activity toward theta and alpha states \u2014 the same frequencies associated with deep meditation and Dhyana",
+      "Csikszentmihalyi\u2019s \u201Cflow state\u201D research describes conditions identical to the Goa dance experience: loss of self-consciousness, altered time perception, total absorption in the present moment",
+      "The Yoga Sutras describe Dharana (concentration) leading to Dhyana (meditation) leading to Samadhi (absorption) \u2014 the extended dance journey follows this same progressive arc",
+      "Prolonged rhythmic movement activates the endocannabinoid system, producing states of euphoria and clarity that parallel descriptions of ananda (bliss) in Vedantic philosophy",
+      "The DJ\u2019s role as guide through this journey mirrors the guru\u2019s function in classical Indian meditation \u2014 not commanding, but creating conditions for the seeker\u2019s own experience",
+    ],
+    verse: "\u0927\u094D\u092F\u093E\u0928 \u2014 \u201CMeditation: sustained, absorbed contemplation\u201D",
+    verseSource: "Yoga Sutras of Patanjali, 3.2",
+  },
+  {
+    id: "art",
+    title: "Art & Craft",
+    description: "Goa\u2019s trance culture generated an entire ecosystem of visual art, fashion, and craft that blends Indian artistic traditions with psychedelic expression. This is not mere decoration \u2014 it is a living art movement born on Indian soil, sustaining hundreds of local artisans and families.",
+    points: [
+      "UV-reactive fluorescent art painted on fabric backdrops became a signature art form \u2014 drawing on both Western psychedelic art and the vivid colour traditions of Indian temple murals and Madhubani painting",
+      "Goan and Indian artisans developed specialised skills in creating these works, building a local creative economy that spans three generations",
+      "The Anjuna flea market became a globally known craft marketplace where Indian textiles, jewellery, and handcraft met international bohemian aesthetics \u2014 a cultural exchange rooted in commerce",
+      "Album cover art for Goa trance labels (Dragonfly, TIP, Spirit Zone) drew heavily from Hindu and Buddhist iconography \u2014 deities, mandalas, sacred geometry \u2014 bringing Indian visual language to a global audience",
+      "Fashion and textile art from the scene blended Indian block printing, embroidery, and fabric dyeing with psychedelic design, creating a distinctive aesthetic now imitated worldwide",
+    ],
+  },
 ];
 
 export interface CultureTestimonial {
@@ -555,6 +581,73 @@ export const CULTURE_STATS: CultureStat[] = [
   { value: "50+", label: "Years of living heritage since the 1960s" },
   { value: "35+", label: "Major psytrance festivals globally, all tracing roots to Goa" },
   { value: "6", label: "Continents where Goa-origin festivals take place" },
+];
+
+export interface ScienceEvidence {
+  category: string;
+  title: string;
+  finding: string;
+  source: string;
+  year: string;
+}
+
+export const SCIENCE_EVIDENCE: ScienceEvidence[] = [
+  {
+    category: "Neuroscience",
+    title: "Rhythmic Entrainment & Trance States",
+    finding: "Repetitive auditory stimuli at steady tempos have been shown to influence neural oscillations, promoting shifts toward theta and alpha band activity associated with focused attention and reduced self-referential processing \u2014 states that share characteristics with meditative absorption.",
+    source: "Trost et al., \u201CMapping aesthetic musical emotions in the brain,\u201D Cerebral Cortex",
+    year: "2012",
+  },
+  {
+    category: "Neuroscience",
+    title: "Endocannabinoid Release During Rhythmic Movement",
+    finding: "Sustained rhythmic physical activity triggers endocannabinoid system activation, producing states of euphoria, pain reduction, and heightened sensory awareness \u2014 what runners call \u201Crunner\u2019s high\u201D and what dancers experience as transcendence.",
+    source: "Raichlen et al., \u201CWired to run: exercise-induced endocannabinoid signaling,\u201D Journal of Experimental Biology",
+    year: "2012",
+  },
+  {
+    category: "Musicology",
+    title: "Drone-Based Structures in Electronic & Indian Music",
+    finding: "Goa trance\u2019s use of sustained bass drones, layered melodic patterns, and progressive harmonic development mirrors the structural principles of Indian raga \u2014 particularly the continuous drone (tanpura) over which melodic exploration unfolds.",
+    source: "D\u2019Andrea, \u201CGlobal Trance: the birth of electronic dance music in Goa,\u201D in Balliger & Greene, Popular Music Matters",
+    year: "2014",
+  },
+  {
+    category: "Musicology",
+    title: "Cross-Cultural Acoustic Analysis",
+    finding: "Analysis of Goa trance tracks reveals incorporation of melodic motifs, call-and-response layering, and harmonic patterns that draw on Indian classical music traditions, distinguishing the genre from purely Western electronic forms.",
+    source: "Lindop, \u201CA journey through Goa trance,\u201D in St John (ed.), Rave Culture and Religion",
+    year: "2004",
+  },
+  {
+    category: "Anthropology",
+    title: "Communal Dance as Social Bonding Mechanism",
+    finding: "Synchronised group movement releases oxytocin and endorphins, creating powerful social bonds and a sense of collective identity. This mechanism underlies ritual dance traditions across all human cultures, from Sufi whirling to Garba.",
+    source: "Tarr, Launay & Dunbar, \u201CMusic and social bonding,\u201D Frontiers in Psychology",
+    year: "2014",
+  },
+  {
+    category: "Anthropology",
+    title: "Ritual Structure in Electronic Music Gatherings",
+    finding: "Ethnographic fieldwork at Goa-origin festivals identifies all defining features of ritual: temporal separation from daily life, liminal experience, communal participation, symbolic transformation (sunset\u2013sunrise journey), and reintegration \u2014 matching Van Gennep and Turner\u2019s classic frameworks.",
+    source: "St John, \u201CGlobal Tribe: Technology, Spirituality and Psytrance,\u201D Equinox Publishing",
+    year: "2012",
+  },
+  {
+    category: "Psychology",
+    title: "Flow State Theory & Trance Dance",
+    finding: "Csikszentmihalyi\u2019s flow conditions \u2014 clear goals, immediate feedback, challenge-skill balance, loss of self-consciousness, altered time perception \u2014 map precisely onto the extended dance experience. The DJ\u2019s skill lies in maintaining this flow state across hours.",
+    source: "Csikszentmihalyi, \u201CFlow: The Psychology of Optimal Experience,\u201D Harper & Row",
+    year: "1990",
+  },
+  {
+    category: "Cultural Heritage",
+    title: "UNESCO ICH Framework Alignment",
+    finding: "Goa\u2019s trance culture meets all five UNESCO domains for Intangible Cultural Heritage: oral traditions, performing arts, social practices/rituals, knowledge about nature, and traditional craftsmanship \u2014 as demonstrated by Berlin techno\u2019s successful 2024 inscription on Germany\u2019s National Inventory.",
+    source: "UNESCO Convention for the Safeguarding of the Intangible Cultural Heritage, Article 2",
+    year: "2003",
+  },
 ];
 
 export const WORLD_MAP_ROUTES = [
