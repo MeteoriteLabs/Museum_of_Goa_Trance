@@ -30,14 +30,14 @@ function ChapterFigures({ chapterId }: { chapterId: string }) {
   };
 
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-3" data-testid={`figures-${chapterId}`}>
-      <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold" data-testid={`text-key-figures-label-${chapterId}`}>Key Figures</span>
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="mt-4" data-testid={`figures-${chapterId}`}>
+      <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold mb-2 block" data-testid={`text-key-figures-label-${chapterId}`}>Key Figures</span>
+      <div className="flex sm:flex-wrap items-center gap-2 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 -mx-1 px-1 scrollbar-hide">
         {people.map((person) => (
           <button
             key={person.name}
             onClick={handleClick}
-            className="flex items-center gap-1.5 rounded-full bg-muted/50 pl-1 pr-2.5 py-1 hover-elevate cursor-pointer"
+            className="flex items-center gap-1.5 rounded-full bg-muted/50 pl-1 pr-2.5 py-1 hover-elevate cursor-pointer flex-shrink-0 sm:flex-shrink"
             data-testid={`button-figure-${person.name.replace(/\s/g, "-").toLowerCase()}`}
           >
             <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
