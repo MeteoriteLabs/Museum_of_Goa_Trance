@@ -165,7 +165,7 @@ export default function Footer() {
             Museum of Goa Trance Initiative, 2026
           </p>
           <p className="text-xs text-muted-foreground/50" data-testid="text-footer-tagline-bottom">
-            Built with care for cultural preservation
+            Made with love, from Goa to the world
           </p>
         </div>
       </div>
