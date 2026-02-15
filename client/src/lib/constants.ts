@@ -4,6 +4,7 @@ export const SOCIAL_IG = "https://www.instagram.com/museumofgoatrance?igsh=MW9sO
 export const SOCIAL_X = "https://x.com/PLACEHOLDER";
 
 export const TIMELINE_ERAS = [
+  { label: "Why Now", id: "why-now" },
   { label: "1960s\u201370s", id: "chapter-1" },
   { label: "1980s", id: "chapter-2" },
   { label: "1990s\u20132000s", id: "chapter-3" },
