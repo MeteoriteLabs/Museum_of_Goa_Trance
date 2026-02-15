@@ -200,7 +200,7 @@ export default function Home() {
                 <ExternalLink className="ml-1.5 h-4 w-4" />
               </Button>
             </a>
-            <a href="#chapter-1">
+            <a href="#why-now">
               <Button
                 variant="outline"
                 size="lg"
@@ -239,6 +239,113 @@ export default function Home() {
       </section>
 
       <div className="max-w-4xl mx-auto px-4 lg:pl-28 xl:pl-36">
+        <section id="why-now" className="py-16 sm:py-20 scroll-mt-24">
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              <span className="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                Why Now
+              </span>
+              <span className="text-xs text-muted-foreground">The Moment for Goa</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" data-testid="text-why-now-title">
+              The Birthplace Deserves Recognition
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
+              Goa is where it all began. In the 1960s and 70s, a unique fusion of global music, Indian spirituality, and communal gathering gave birth to an entirely new genre of electronic music — Goa trance. This sound spread across the world, inspiring festivals, record labels, and communities on every continent. Yet the birthplace itself has never received formal cultural recognition.
+            </p>
+            <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
+              Meanwhile, other cities have already secured heritage status for electronic music traditions that originated elsewhere. The precedent is clear — and it makes Goa's case even stronger.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <Card className="mt-8 p-6" data-testid="card-why-now-comparison">
+              <h4 className="font-semibold text-sm mb-5 text-center">A Global Precedent Already Exists</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="text-center p-5 rounded-md bg-muted/50" data-testid="card-comparison-detroit">
+                  <div className="w-10 h-10 rounded-full bg-muted-foreground/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-lg">1</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1">Origin City</p>
+                  <p className="text-lg font-bold">Detroit</p>
+                  <p className="text-xs text-muted-foreground mt-1.5">Birthplace of Techno</p>
+                  <div className="mt-3 w-full h-px bg-border" />
+                  <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                    Techno originated here in the 1980s through pioneers like Juan Atkins, Derrick May, and Kevin Saunderson. But without structured preservation, its cultural capital migrated elsewhere.
+                  </p>
+                </div>
+
+                <div className="text-center p-5 rounded-md bg-primary/5 border border-primary/10" data-testid="card-comparison-berlin">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-lg">2</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1">Recognised Heritage</p>
+                  <p className="text-lg font-bold">Berlin</p>
+                  <p className="text-xs text-primary/80 font-medium mt-1.5">National ICH — March 2024</p>
+                  <div className="mt-3 w-full h-px bg-border" />
+                  <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                    Berlin built the ecosystem after the Wall fell in 1989. In March 2024, Germany officially inscribed "Techno Culture in Berlin" on its National Inventory of Intangible Cultural Heritage.
+                  </p>
+                </div>
+
+                <div className="relative text-center p-5 rounded-md bg-primary/5 border-2 border-primary/20" data-testid="card-comparison-goa">
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-md whitespace-nowrap">
+                    THE BIRTHPLACE
+                  </span>
+                  <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-3 mt-1">
+                    <span className="text-lg font-bold text-primary">3</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1">Origin & Living Heritage</p>
+                  <p className="text-lg font-bold text-primary">Goa</p>
+                  <p className="text-xs text-primary/80 font-medium mt-1.5">Birthplace of Trance</p>
+                  <div className="mt-3 w-full h-px bg-border" />
+                  <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                    Goa trance was born here in the 1960s–70s, creating a global cultural movement. Unlike Detroit, Goa is both the origin and an active living heritage — yet it has no formal recognition.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 rounded-md bg-muted/30 text-center">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  If Berlin earned national heritage recognition for a genre that <strong className="text-foreground">originated in Detroit</strong>, then Goa — the <strong className="text-foreground">actual birthplace</strong> of trance — has an even stronger claim for cultural preservation.
+                </p>
+              </div>
+            </Card>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <Card className="mt-4 p-5" data-testid="card-why-now-urgency">
+              <h4 className="font-semibold text-sm mb-3">Why the Urgency</h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 flex-wrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground flex-1 min-w-0">
+                    Foreign arrivals to Goa dropped from ~8.9 lakh (2017) to ~5.17 lakh (2025) — a steep decline in cultural tourism
+                  </p>
+                </div>
+                <div className="flex items-start gap-3 flex-wrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground flex-1 min-w-0">
+                    Sunburn Festival — Asia's largest EDM festival — left Goa for Mumbai in 2025
+                  </p>
+                </div>
+                <div className="flex items-start gap-3 flex-wrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground flex-1 min-w-0">
+                    Goa Gil, the "Godfather of Goa Trance," passed away in October 2023 — living memory is fading
+                  </p>
+                </div>
+                <div className="flex items-start gap-3 flex-wrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground flex-1 min-w-0">
+                    Berlin's 2024 recognition proves the pathway works — India is a UNESCO 2003 Convention signatory
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </ScrollReveal>
+        </section>
+
         <section id="chapter-1" className="py-16 sm:py-20 scroll-mt-24">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
