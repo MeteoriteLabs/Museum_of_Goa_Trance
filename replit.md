@@ -46,6 +46,7 @@ npm run dev
 - Subtle Framer Motion animations (fade-up, scroll reveal, page transitions, parallax heroes, staggered cards)
 
 ## Recent Changes
+- Added "Why Now" section as the first entry in the home page timeline (before Chapter 1) — includes brief Goa birthplace content, 3-column visual comparison card (Detroit → Berlin → Goa) showing heritage precedent, urgency bullet points, and "THE BIRTHPLACE" highlighted label on Goa card
 - Restructured timeline from 7 to 8 chapters: split old Ch5 (2017–2025) into Ch5 (2010s–20s: Regulatory Pressure Builds) and Ch6 (2020–2026: Crisis & Response); renumbered Detroit/Berlin → Ch7, The Ask → Ch8
 - Added "Initiative for Museum of Goa Trance, February 2026" as highlighted milestone in new Chapter 6
 - Added 40+ factual sub-milestones across all 8 chapters via new SubTimeline component and CHAPTER_MILESTONES data in constants.ts
