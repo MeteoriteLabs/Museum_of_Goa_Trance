@@ -1,7 +1,7 @@
 # Protect the Birthplace — Goa's Trance Heritage
 
 ## Overview
-A museum/heritage-style website documenting Goa's trance heritage as a cultural preservation initiative. The site follows a timeline documentary format across 6 pages.
+An open-source, non-profit museum/heritage-style website documenting Goa's trance heritage as a public-interest cultural preservation initiative. The site follows a timeline documentary format across 6 pages.
 
 ## Architecture
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS + Framer Motion
