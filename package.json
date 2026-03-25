@@ -1,5 +1,5 @@
 {
-  "name": "rest-express",
+  "name": "museum-of-goa-trance",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -108,5 +108,6 @@
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
-  }
+  },
+  "description": "Open-source, non-profit digital museum and advocacy platform preserving Goa's trance heritage."
 }
